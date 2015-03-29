@@ -1,0 +1,54 @@
+#! /usr/bin/env bash
+
+# ----- Helpful functions -----
+
+# Print PATH in easier to read format
+function mypath() {
+  echo -e ${PATH//:/\\n}
+}
+
+# Grep for a process
+function psg() {
+  ps aux | grep $@
+}
+
+# Rails Console shortcut
+function rc() {
+if [ -z "$@" ]; then
+  rails c
+else
+  ttmscalr rails_c -f $@
+fi
+}
+
+# Test TTM Branch
+# Must be run from a TTM repo
+# Checks out rc, resets to origin/rc, pulls latest rc, pulls branch and merges into rc
+function tb() {
+  git checkout rc
+  git reset --hard origin/rc
+  git pull
+  git pull --no-ff --no-edit origin $@
+}
+
+# ttmscalr ssh shortcut
+function ttmssh() {
+  ttmscalr ssh debug.1 -f $@
+}
+
+# Migrate apangea data to warehouse
+# Must be run from TTM reporting repo
+function wad() {
+  rake etl:incremental
+  rake etl:aggregate
+  rake etl:aggregate_weekly
+}
+
+# Run apangea integration tests
+function itesta() {
+  if [ -z "$@" ]; then
+    bundle exec rake
+  else
+    bundle exec rake test TEST=$@
+  fi
+}

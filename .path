@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# path
+SCALR_HOME=~/Projects/TTM/scalr
+export PATH="$HOME/.rvm/bin:$SCALR_HOME/bin:$PATH"

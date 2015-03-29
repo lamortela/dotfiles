@@ -1,0 +1,59 @@
+#! /usr/bin/env bash
+
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+#!/usr/bin/env bash
+
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~"
+alias -- -="cd -"
+alias db="cd ~/Dropbox"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias p="cd ~/Projects"
+alias anth="cd ~/Projects/anth"
+alias ttm="cd ~/Projects/TTM"
+alias ttma="cd ~/Projects/TTM/apangea"
+alias ttmr="cd ~/Projects/TTM/reporting"
+alias ttmlp="cd ~/Projects/TTM/lesson-player"
+alias ttmlt="cd ~/Projects/TTM/live_teaching"
+alias ttmet="cd ~/Projects/TTM/email-templates"
+
+# Listing
+alias la="ls -alF"
+
+# Empty Trash
+alias emptytrash="rm -rfv ~/.Trash"
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleshowAllFiles -bool false && killall Finder"
+
+# Other
+alias mute="osascript -e 'set volume output muted true'"
+alias unmute="osascript -e 'set volume 3'"
+
+# Shortcuts
+alias gh="history | grep "
+alias gla="git la"
+alias glds="git lds -25"
+alias gldr="git ldr -25"
+alias pk="pkill -9 \!^"
+alias s="sublime ."
+alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+
+# Running TTM apps
+alias run="bundle exec foreman start"
+alias rundev="bundle exec foreman s -f Procfile.Development"
+alias runnr="bundle exec foreman s -f Procfile.NewRelic"
+alias runlp="grunt serve:dist"
+alias runlt=""
+
+# Testing TTM apps
+alias startats="rake db:test:prepare; RAILS_ENV=test rake servers:start"
+alias stopats="RAILS_ENV=test rake servers:stop"
+alias jtesta="bundle exec rake spec:javascript"
+alias ftesta="ruby test/fast/runner.rb"
