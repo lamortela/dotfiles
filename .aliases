@@ -3,8 +3,6 @@
 # Navigation
 alias ..="cd .."
 alias ...="cd ../.."
-#!/usr/bin/env bash
-
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~"
@@ -14,6 +12,8 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Projects"
 alias anth="cd ~/Projects/anth"
+
+# TTM specific navigation
 alias ttm="cd ~/Projects/TTM"
 alias ttma="cd ~/Projects/TTM/apangea"
 alias ttmr="cd ~/Projects/TTM/reporting"
