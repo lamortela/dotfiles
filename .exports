@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
 
 # nvm
-export NVM_DIR=~/.nvm
+export NVM_DIR=~/.nvm;
 
 # CLI colors
-export CLICOLOR=1
+export CLICOLOR=1;
+
+# Colored grep output
+export GREP_OPTIONS="--color=auto";
 
 # Place current directory in bash title/tab
-export PROMPT_COMMAND='echo -ne "\033]0; ${PWD##*/}\007"'
+export PROMPT_COMMAND='echo -ne "\033]0; ${PWD##*/}\007"';
 
 #share bash history across sessions/tabs
-export HISTSIZE=5000
-export HISTFILESIZE=10000
-export HISTCONTROL=ignoredups:erasedups
-shopt -s histappend
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export HISTSIZE=5000;
+export HISTFILESIZE=10000;
+export HISTCONTROL=ignoredups:erasedups;
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND";
