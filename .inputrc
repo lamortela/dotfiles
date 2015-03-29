@@ -1,2 +1,15 @@
 # Case insensitive tab auto completion
 set completion-ignore-case on
+
+# List all matches when multiple possible completions exist
+set show-all-if-ambiguous on
+
+# Use already entered text when searching command history
+"\e[B": history-search-forward
+"\e[A": history-search-backward
+
+# Show file type in completions
+set visible-stats on
+
+# Up default number of completions to list before asking
+set completion-query-items 200
