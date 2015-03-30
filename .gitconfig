@@ -7,7 +7,7 @@
 [core]
 	autocrlf = input
 	excludesfile = /Users/anthlam/.gitignore_global
-	editor = sublime -n -w
+	editor = vim
 
 [push]
 	default = simple
@@ -36,7 +36,8 @@
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%C(magenta)\\ [%cn]" --decorate --numstat
 
 	# Shortcut the basics
-	st = status -s
+	s = status -s
+	st = status
 	cl = clone
 	ci = commit
 	co = checkout
