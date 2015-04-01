@@ -40,6 +40,8 @@ alias gh="history | grep "
 alias gla="git la"
 alias glds="git lds -25"
 alias gldr="git ldr -25"
+alias gp="git pull"
+alias grhrc="git rhrc"
 alias gs="git s"
 alias gst="git st"
 alias pk="pkill -9 \!^"
@@ -48,9 +50,10 @@ alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/serv
 alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
 # Running TTM apps
-alias run="bundle exec foreman start"
-alias rundev="bundle exec foreman s -f Procfile.Development"
-alias runnr="bundle exec foreman s -f Procfile.NewRelic"
+alias runttm="bundle exec foreman start"
+alias runrep="bundle exec foreman start -p 3000"
+alias rundev="bundle exec foreman s -f Procfile.Development"  #Works in TTM and Reporting
+alias runnr="bundle exec foreman s -f Procfile.NewRelic"  #Works in TTM and Reporting
 alias runlp="grunt serve:dist"
 alias runlt="ASSETS_USE_DIST=true foreman start -f Procfile.debug"
 
