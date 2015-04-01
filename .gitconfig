@@ -50,9 +50,9 @@
 	r2 = reset HEAD^^
 	rh = reset --hard
 	rhh = reset --hard HEAD
+	rhrc = reset --hard origin/rc
 
 	# Stashing
 	sl = stash list
 	sa = stash apply
 	ss = stash save
-	rhrc = reset --hard origin/rc

@@ -52,3 +52,12 @@ function itesta() {
     bundle exec rake test TEST=$@
   fi
 }
+
+# Get local live teaching ready
+function setuplt() {
+  git pull
+  bundle install
+  npm install
+  grunt install
+  grunt build
+}

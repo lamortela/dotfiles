@@ -52,7 +52,7 @@ alias run="bundle exec foreman start"
 alias rundev="bundle exec foreman s -f Procfile.Development"
 alias runnr="bundle exec foreman s -f Procfile.NewRelic"
 alias runlp="grunt serve:dist"
-alias runlt="grunt"
+alias runlt="ASSETS_USE_DIST=true foreman start -f Procfile.debug"
 
 # Testing TTM apps
 alias startats="rake db:test:prepare; RAILS_ENV=test rake servers:start"
