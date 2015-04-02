@@ -29,28 +29,28 @@
 
 	# List things (History, Aliases)
 	la = "!git config -l | grep alias | cut -c 7-"
-	lds = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%C(magenta)\\ [%cn]" --decorate --date=short
-	ldr = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%C(magenta)\\ [%cn]" --decorate --date=relative
-	le = log --oneline --decorate
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%C(magenta)\\ [%cn]" --decorate
+	lds = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%C(magenta)\\ [%cn]" --decorate --date=short --graph
+	ldr = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%C(magenta)\\ [%cn]" --decorate --date=relative --graph
+	le = log --oneline --decorate --graph
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%C(magenta)\\ [%cn]" --decorate --numstat
 
 	# Shortcut the basics
+	br = branch
+	ci = commit
+	cl = clone
+	co = checkout
+	diff = diff --word-diff
 	s = status -s
 	st = status
-	cl = clone
-	ci = commit
-	co = checkout
-	br = branch
-	diff = diff --word-diff
+	up = pull origin
 
 	# Resets
 	r = reset
-	r1 = reset HEAD^
-	r2 = reset HEAD^^
-	rh = reset --hard
-	rhh = reset --hard HEAD
+	r1 = reset HEAD^		#undo last commit, put changes in workspace
+	rh = reset --hard		#discard changes in workspace and index since last commit
 	rhrc = reset --hard origin/rc
+	rhm = reset --hard origin/master
+	rs = reset --soft HEAD^		#undo last commit, keep changes in workspace and index
 
 	# Stashing
 	sl = stash list
