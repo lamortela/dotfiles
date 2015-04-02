@@ -45,7 +45,7 @@
 	up = pull origin
 
 	# Resets
-	r = reset
+	r = reset 		#unstage files in index
 	r1 = reset HEAD^		#undo last commit, put changes in workspace
 	rh = reset --hard		#discard changes in workspace and index since last commit
 	rhrc = reset --hard origin/rc
