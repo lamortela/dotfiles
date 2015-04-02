@@ -21,3 +21,4 @@ source $(brew --prefix nvm)/nvm.sh;
 # This must be at the end of the file to avoid a warning when
 # running the rvm command
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -r "$HOME/.rvm/scripts/completion" ]] && source "$HOME/.rvm/scripts/completion"
