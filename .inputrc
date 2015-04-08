@@ -1,3 +1,6 @@
+# vi mode for all the things
+set editing-mode vi
+
 # Case insensitive tab auto completion
 set completion-ignore-case on
 
