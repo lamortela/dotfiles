@@ -2,6 +2,25 @@
 
 # ----- Helpful functions -----
 
+# Diff of TTM feature flags
+function ffdiff() {
+  ~/Projects/TTM/apangea/script/sync_feature_flags.rb --from $1 --to $2 --list
+}
+
+# Sync TTM feature flags
+function ffsync() {
+  ~/Projects/TTM/apangea/script/sync_feature_flags.rb --from $1 --to $2
+}
+
+# Run apangea integration tests
+function itesta() {
+  if [ -z "$@" ]; then
+    bundle exec rake
+  else
+    bundle exec rake test TEST=$@
+  fi
+}
+
 # Print PATH in easier to read format
 function mypath() {
   echo -e ${PATH//:/\\n}
@@ -44,14 +63,6 @@ function wad() {
   rake etl:aggregate_weekly
 }
 
-# Run apangea integration tests
-function itesta() {
-  if [ -z "$@" ]; then
-    bundle exec rake
-  else
-    bundle exec rake test TEST=$@
-  fi
-}
 
 # Get local live teaching ready
 function setuplt() {
@@ -61,3 +72,4 @@ function setuplt() {
   grunt install
   grunt build
 }
+
