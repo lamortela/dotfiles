@@ -41,6 +41,15 @@ fi
 }
 
 # Test TTM Branch
+# Get local live teaching ready
+function setuplt() {
+  git pull
+  bundle install
+  npm install
+  grunt install
+  grunt build
+}
+
 # Must be run from a TTM repo
 # Checks out rc, resets to origin/rc, pulls latest rc, pulls branch and merges into rc
 function tb() {
@@ -62,14 +71,3 @@ function wad() {
   rake etl:aggregate
   rake etl:aggregate_weekly
 }
-
-
-# Get local live teaching ready
-function setuplt() {
-  git pull
-  bundle install
-  npm install
-  grunt install
-  grunt build
-}
-
