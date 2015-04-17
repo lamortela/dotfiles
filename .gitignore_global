@@ -2,3 +2,4 @@ anth-test-data/
 .ttm_scalr_access_info
 .env
 .DS_Store
+db-backups/
