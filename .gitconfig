@@ -42,7 +42,7 @@
 	diff = diff --word-diff
 	s = status -s
 	st = status
-	up = pull origin
+	po = pull origin
 
 	# Resets
 	r = reset 		#unstage files in index

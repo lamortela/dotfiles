@@ -53,7 +53,7 @@ alias grhrc="git rhrc"
 alias grs="git rs"
 alias gs="git s"
 alias gst="git st"
-alias gup="git up"
+alias gpo="git po"
 
 # other shortcuts
 alias pk="pkill -9 \!^"
