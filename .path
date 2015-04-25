@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
 # path
+RVM_HOME=~/.rvm
 SCALR_HOME=~/Projects/TTM/scalr
-export PATH="/usr/local/bin:$HOME/.rvm/bin:$SCALR_HOME/bin:$PATH";
+export PATH="/usr/local/bin:$RVM_HOME/bin:$SCALR_HOME/bin:$PATH";
