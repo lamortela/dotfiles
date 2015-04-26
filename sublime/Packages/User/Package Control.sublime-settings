@@ -16,7 +16,9 @@
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"SublimeLinter",
+		"SublimeLinter-jshint",
 		"Theme - Afterglow",
-		"TrailingSpaces"
+		"TrailingSpaces",
+		"View In Browser"
 	]
 }

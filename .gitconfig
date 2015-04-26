@@ -18,10 +18,8 @@
 [alias]
 	# Diffing
 	dl = "!git ll -1"
-	dlc = diff --cached HEAD^
-	#dr = "!f() { git diff "$1"^.."$1"; }; f"	# get bad revision error, why?
-	#lc = "!f() { git ll "$1"^.."$1"; }; f"		# get bad revision error, why?
-	#diffr = "!f() { git diff "$1"^.."$1"; }; f"	# get bad revision error, why?
+	dslc = diff --cached HEAD^
+	diff = diff --word-diff
 
 	# Grepping
 	f = "!git ls-files | grep -i"
@@ -39,7 +37,6 @@
 	ci = commit
 	cl = clone
 	co = checkout
-	diff = diff --word-diff
 	s = status -s
 	st = status
 	po = pull --no-edit origin
