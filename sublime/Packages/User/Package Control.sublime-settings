@@ -17,6 +17,7 @@
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeLinter-jshint",
+		"SublimeLinter-rubocop",
 		"Theme - Afterglow",
 		"TrailingSpaces",
 		"View In Browser"
