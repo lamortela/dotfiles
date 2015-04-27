@@ -4,8 +4,8 @@
 
 # Display colors
 function colortest() {
-  for i in {0..255}; do 
-    echo " $i:  $(tput setaf $i)This is a test$(tput sgr0) $(tput setab $i)This is a test$(tput sgr0)"; 
+  for i in {0..255}; do
+    echo " $i:  $(tput setaf $i)This is a test$(tput sgr0) $(tput setab $i)This is a test$(tput sgr0)";
   done;
 }
 
@@ -77,4 +77,5 @@ function wad() {
   rake etl:incremental
   rake etl:aggregate
   rake etl:aggregate_weekly
+  rake etl:rebuild_standards
 }
