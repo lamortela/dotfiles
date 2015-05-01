@@ -75,6 +75,7 @@ function ttmssh() {
 # Must be run from TTM reporting repo
 function wad() {
   rake etl:incremental
+  rake etl:truncate_weekly_aggregates
   rake etl:aggregate
   rake etl:aggregate_weekly
   rake etl:rebuild_standards
