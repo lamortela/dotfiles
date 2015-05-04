@@ -66,6 +66,11 @@ function tb() {
   git pull --no-ff --no-edit origin $@
 }
 
+# ttmscalr config shortcut
+function ttmcfg() {
+  ttmscalr config -f $@
+} 
+
 # ttmscalr ssh shortcut
 function ttmssh() {
   ttmscalr ssh debug.1 -f $@

@@ -19,7 +19,10 @@ alias ttma="cd ~/Projects/TTM/apangea"
 alias ttmr="cd ~/Projects/TTM/reporting"
 alias ttmlp="cd ~/Projects/TTM/lesson-player"
 alias ttmlt="cd ~/Projects/TTM/live_teaching"
-alias ttmet="cd ~/Projects/TTM/email-templates"
+alias ttmm="cd ~/Projects/TTM/meta"
+
+# TTM Scalr
+alias ttmsfl="ttmscalr farm:list"
 
 # Listing
 alias la="ls -alF"
