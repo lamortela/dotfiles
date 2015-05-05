@@ -1,0 +1,11 @@
+# ~/.tmuxinator/reporting.yml
+
+name: reporting 
+root: ~/Projects/TTM/reporting
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+windows:
+  - rails-c: rc
+  - server: gpo; bundle install; rake db:migrate; runrep 
