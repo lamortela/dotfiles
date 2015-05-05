@@ -21,11 +21,16 @@ function ffsync() {
 
 # Run apangea integration tests
 function itesta() {
+  rake db:test:prepare
+  RAILS_ENV=test rake servers:start
+
   if [ -z "$@" ]; then
     bundle exec rake
   else
     bundle exec rake test TEST=$@
   fi
+
+  RAILS_ENV=test rake servers:stop
 }
 
 # Print PATH in easier to read format
