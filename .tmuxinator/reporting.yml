@@ -7,5 +7,4 @@ root: ~/Projects/TTM/reporting
 # pre_window: rbenv shell 2.0.0-p247
 
 windows:
-  - rails-c: rc
   - server: gpo; bundle install; rake db:migrate; runrep 
