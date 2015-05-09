@@ -31,7 +31,7 @@ syntax enable
 set laststatus=2
 let g:airline_powerline_fonts = 1
 
-"personal
+"look and feel
 set number
 set ruler
 set colorcolumn=81
@@ -40,3 +40,5 @@ set colorcolumn=81
 set expandtab
 set tabstop=2
 set shiftwidth=2
+
+set noswapfile
