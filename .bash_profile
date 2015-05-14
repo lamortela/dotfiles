@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Load all the shell dotfiles
-for file in ~/.{path,bash_prompt,exports,aliases,functions,bashrc}; do
+for file in ~/.{path,bash_prompt,exports,aliases,functions,bashrc,tmuxinator.bash}; do
   [ -r "$file" ] && source "$file"
 done;
 unset file;
