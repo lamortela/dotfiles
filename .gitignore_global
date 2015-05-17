@@ -3,3 +3,4 @@ anth-test-data/
 .env
 .DS_Store
 db-backups/
+tags
