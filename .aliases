@@ -21,8 +21,9 @@ alias ttmlp="cd ~/Projects/TTM/lesson-player"
 alias ttmlt="cd ~/Projects/TTM/live_teaching"
 alias ttmm="cd ~/Projects/TTM/meta"
 
-# TTM Scalr
+# TTM specific other 
 alias ttmsfl="ttmscalr farm:list"
+alias gi="/git/gi/gi; open issues.html; sleep 2; rm issues.html"
 
 # Listing
 alias la="ls -alF"
