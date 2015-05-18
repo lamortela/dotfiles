@@ -23,7 +23,7 @@ alias ttmm="cd ~/Projects/TTM/meta"
 
 # TTM specific other 
 alias ttmsfl="ttmscalr farm:list"
-alias gi="/git/gi/gi; open issues.html; sleep 2; rm issues.html"
+alias gi="~/Projects/TTM/gi/gi; open issues.html; sleep 2; rm issues.html"
 
 # Listing
 alias la="ls -alF"
