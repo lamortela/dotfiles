@@ -5,6 +5,9 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
+# For bash completion
+source ~/.tmuxinator.bash;
+
 # Append to bash history instead of overwriting
 shopt -s histappend;
 
