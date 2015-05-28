@@ -7,4 +7,8 @@ root: ~/Projects/TTM/apangea
 # pre_window: rbenv shell 2.0.0-p247
 
 windows:
-  - server: gpo; bundle install; rake db:migrate; runttm 
+  - server: 
+      layout: 6279,204x50,0,0[204x31,0,0,14,204x18,0,32,1]
+      panes:
+        - gpo; bundle install; rake db:migrate; runttm 
+        - clear
