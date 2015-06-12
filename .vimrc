@@ -35,6 +35,23 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_inactive_collapse=1
 let g:airline#extensions#tabline#enabled = 0
+let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V-L',
+    \ '^V' : 'V-B',
+    \ 'c'  : 'CMD',
+    \ 's'  : 'S',
+    \ 'S'  : 'S-L',
+    \ '^S' : 'S-B',
+    \ 't'  : 'T',
+    \ }
+
+"for ctrl-p
+let g:ctrlp_show_hidden=1
 
 "look and feel
 set number
