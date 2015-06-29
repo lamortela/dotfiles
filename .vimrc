@@ -52,6 +52,8 @@ let g:airline_mode_map = {
 
 "for ctrl-p
 let g:ctrlp_show_hidden=1
+set wildignore+=*.png,*.jpg,*.pdf,*.swf
+let g:ctrlp_custom_ignore = '\.git$\|\.o$\|\.app$\|\.beam$\|\.dSYM\|\.ipa$\|\.csv\|tags\|public\/images$\|public\/uploads$\|log\|tmp$\|source_maps\|app\/assets\/images\|test\/reports\|node_modules\|bower_components\|dist'
 
 "look and feel
 set number
