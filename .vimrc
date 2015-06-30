@@ -1,3 +1,5 @@
+let mapleader = ","
+
 "for Vundle
 set nocompatible
 filetype off
@@ -54,6 +56,10 @@ let g:airline_mode_map = {
 let g:ctrlp_show_hidden=1
 set wildignore+=*.png,*.jpg,*.pdf,*.swf
 let g:ctrlp_custom_ignore = '\.git$\|\.o$\|\.app$\|\.beam$\|\.dSYM\|\.ipa$\|\.csv\|tags\|public\/images$\|public\/uploads$\|log\|tmp$\|source_maps\|app\/assets\/images\|test\/reports\|node_modules\|bower_components\|dist'
+
+"for ctags
+set tags=./tags,tags
+map <Leader>c :!rm tags; ctags --exclude=.git --exclude=vendor --exclude=node_modules --exclude=coverage --exclude=public -R .;<CR><CR>
 
 "look and feel
 set number
