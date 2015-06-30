@@ -29,16 +29,14 @@ alias gi="~/Projects/TTM/gi/gi; open issues.html; sleep 2; rm issues.html"
 # Listing
 alias la="ls -alF"
 
-# Empty Trash
-alias emptytrash="rm -rfv ~/.Trash"
-
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleshowAllFiles -bool false && killall Finder"
 
-# Other
+# OSX
 alias mute="osascript -e 'set volume output muted true'"
 alias unmute="osascript -e 'set volume 3'"
+alias emptytrash="rm -rfv ~/.Trash"
 
 # git shortcuts
 alias gbr="git br"
@@ -61,9 +59,13 @@ alias gs="git s"
 alias gst="git st"
 alias gpo="git po"
 
-# other shortcuts
-alias pk="pkill -9 \!^"
+# Editors
 alias s="sublime ."
+
+# process killing/grepping
+alias pk="pkill -9 \!^"
+
+# Postgres
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
