@@ -53,17 +53,7 @@ fi
 }
 
 # Test TTM Branch
-# Get local live teaching ready
-function setuplt() {
-  git pull
-  bundle install
-  npm install
-  grunt install
-  grunt build
-}
-
 # Must be run from a TTM repo
-# Checks out rc, resets to origin/rc, pulls latest rc, pulls branch and merges into rc
 function tb() {
   git checkout rc
   git reset --hard origin/rc
@@ -74,19 +64,10 @@ function tb() {
 # ttmscalr config shortcut
 function ttmcfg() {
   ttmscalr config -f $@
-} 
+}
 
 # ttmscalr ssh shortcut
 function ttmssh() {
   ttmscalr ssh debug.1 -f $@
 }
 
-# Migrate apangea data to warehouse
-# Must be run from TTM reporting repo
-function wad() {
-  rake etl:incremental
-  rake etl:truncate_weekly_aggregates
-  rake etl:aggregate
-  rake etl:aggregate_weekly
-  rake etl:rebuild_standards
-}
