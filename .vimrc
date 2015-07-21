@@ -64,7 +64,8 @@ map <Leader>c :!rm tags; ctags --exclude=.git --exclude=vendor --exclude=node_mo
 "look and feel
 set number
 set ruler
-set colorcolumn=81
+set colorcolumn=80
+highlight ColorColumn ctermbg=8
 set nowrap
 
 "tabs converted to 2 spaces
