@@ -46,7 +46,6 @@ alias gco="git co"
 alias gd="git diff"
 alias gf="git f"
 alias gg="git grep"
-alias gh="history | grep "
 alias gla="git la"
 alias glds="git lds -25"
 alias gldsb="git lds -50"
@@ -65,9 +64,15 @@ alias s="sublime ."
 # process killing/grepping
 alias pk="pkill -9 \!^"
 
+# Search history
+alias gh="history | grep "
+
 # Postgres
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+
+# ctags
+alias actags="rm tags; ctags --exclude=.git --exclude=vendor --exclude=node_modules --exclude=coverage --exclude=public -R .;"
 
 # Running TTM apps
 alias runttm="ttma; bundle exec foreman start"
