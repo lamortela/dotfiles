@@ -8,8 +8,8 @@ root: ~/Projects/TTM/apangea
 
 windows:
   - server:
-      layout: e05d,272x61,0,0{131x61,0,0,1,140x61,132,0[140x30,132,0,2,140x30,132,31,7]}
+      layout: d882,272x61,0,0[272x46,0,0,1,272x14,0,47{136x14,0,47,5,135x14,137,47,25}]
       panes:
         - vim
-        - gpo; bundle install; rake db:migrate; runttm
         - clear
+        - gpo; bundle install; rake db:migrate; runttm
