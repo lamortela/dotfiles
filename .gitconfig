@@ -53,3 +53,9 @@
 	sl = stash list
 	sa = stash apply
 	ss = stash save
+
+  # Ctags
+	ctags = !.git/hooks/ctags
+
+[init]
+	templatedir = ~/.git_template

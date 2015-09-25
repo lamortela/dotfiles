@@ -22,10 +22,10 @@ alias ttmlt="cd ~/Projects/TTM/live_teaching"
 alias ttmab="cd ~/Projects/TTM/avatar-builder"
 alias ttmm="cd ~/Projects/TTM/meta"
 
-# TTM specific other 
+# TTM specific other
 alias ttmsfl="ttmscalr farm:list"
 alias giui="~/Projects/TTM/gi/gi; open issues.html; sleep 5; rm issues.html"
-alias gi="~/Projects/TTM/gi/gi"
+alias gi="~/Projects/TTM/gi/gi 1"
 
 # Listing
 alias la="ls -alF"

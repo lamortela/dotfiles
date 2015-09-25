@@ -60,8 +60,8 @@ let g:ctrlp_max_files = 0
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
 
 "for ctags
-set tags=./tags,tags
-map <Leader>c :!rm tags; ctags --exclude=.git --exclude=vendor --exclude=node_modules --exclude=coverage --exclude=public -R .;<CR><CR>
+set tags=./.git/tags,tags
+map <Leader>c :!git ctags<CR><CR>
 
 "look and feel
 set number
