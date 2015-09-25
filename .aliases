@@ -24,7 +24,8 @@ alias ttmm="cd ~/Projects/TTM/meta"
 
 # TTM specific other 
 alias ttmsfl="ttmscalr farm:list"
-alias gi="~/Projects/TTM/gi/gi; open issues.html; sleep 2; rm issues.html"
+alias giui="~/Projects/TTM/gi/gi; open issues.html; sleep 5; rm issues.html"
+alias gi="~/Projects/TTM/gi/gi"
 
 # Listing
 alias la="ls -alF"
@@ -82,7 +83,7 @@ alias runrep="ttmr; bundle exec foreman start -p 3000"
 alias runrepd="ttmr; bundle exec foreman s -f Procfile.Development"
 alias runrepnr="ttmr; bundle exec foreman s -f Procfile.NewRelic"
 alias runlp="ttmlp; grunt serve:dist"
-alias runlt="ttmlt; nf start --port 5050 -j Procfile.debug"
+alias runlt="ttmlt; grunt build; nf start --port 5050 -j Procfile.debug"
 alias runab="ttmab; grunt serve:dist"
 
 # Testing TTM apps
