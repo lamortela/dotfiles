@@ -1,7 +1,7 @@
-# ~/.tmuxinator/reporting.yml
+# ~/.tmuxinator/_template.yml
 
-name: reporting
-root: ~/Projects/TTM/reporting
+name: dev_template
+root: ~
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -11,5 +11,5 @@ windows:
       layout: d882,272x61,0,0[272x46,0,0,1,272x14,0,47{136x14,0,47,5,135x14,137,47,25}]
       panes:
         - vim
-        - gpo; bundle install; rake db:migrate; runrep
+        - clear
         - clear

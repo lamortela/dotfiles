@@ -1,0 +1,7 @@
+# ~/.tmuxinator/_home.yml
+
+name: _home
+root: ~
+
+windows:
+  - cmd: clear

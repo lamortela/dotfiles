@@ -11,5 +11,5 @@ windows:
       layout: d882,272x61,0,0[272x46,0,0,1,272x14,0,47{136x14,0,47,5,135x14,137,47,25}]
       panes:
         - vim
-        - clear
         - gpo; bundle install; rake db:migrate; runttm
+        - clear
