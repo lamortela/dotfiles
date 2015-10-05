@@ -66,7 +66,7 @@ map <Leader>c :!git ctags<CR><CR>
 "look and feel
 set number
 set ruler
-set colorcolumn=80
+set colorcolumn=100
 highlight ColorColumn ctermbg=8
 set nowrap
 
