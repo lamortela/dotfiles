@@ -1,4 +1,4 @@
-let mapleader = ","
+let mapleader = "\<Space>"
 
 "for Vundle
 set nocompatible
@@ -61,7 +61,6 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
 
 "for ctags
 set tags=./.git/tags,tags
-map <Leader>c :!git ctags<CR><CR>
 
 "look and feel
 set number
@@ -76,6 +75,20 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
+"misc
 set noswapfile
-
 set scrolloff=5
+
+"my keymap (the pipe is not part of the command, it just enables inline comments)
+inoremap jk <Esc>|                        "exit insert mode
+nnoremap ss :w<CR>|                       "save file from normal mode
+nnoremap <C-j>s :%!python -m json.tool|   "pretty print json"
+nnoremap <C-h> <C-w>h|                    "switch split left
+nnoremap <C-j> <C-w>j|                    "switch split down
+nnoremap <C-k> <C-w>k|                    "switch split up
+nnoremap <C-l> <C-w>l|                    "switch split right
+map <leader>x :bd<CR>|                    "delete buffer
+map <leader>c :!git ctags<CR><CR>|        "re/create ctags
+"ctags go to definition
+"ctags go back
+"nav buffers in single pane
