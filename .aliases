@@ -61,6 +61,7 @@ alias gpo="git po"
 
 # Editors
 alias s="sublime ."
+alias v="vim"
 
 # process killing/grepping
 alias pk="pkill -9 \!^"
@@ -91,3 +92,6 @@ alias startats="rake db:test:prepare; RAILS_ENV=test rake servers:start"
 alias stopats="RAILS_ENV=test rake servers:stop"
 alias jtesta="bundle exec rake spec:javascript"
 alias ftesta="ruby test/fast/runner.rb"
+
+# Reloading profile
+alias sop="source ~/.bash_profile"
