@@ -71,3 +71,7 @@ function ttmssh() {
   ttmscalr ssh debug.1 -f $@
 }
 
+# open buffer output in vim
+function v() {
+  $@ | vim -R -
+}
