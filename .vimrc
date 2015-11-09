@@ -79,6 +79,9 @@ set softtabstop=2
 set noswapfile
 set scrolloff=5
 
+"system clipboard support
+set clipboard=unnamed
+
 "my keymap (the pipe is not part of the command, it just enables inline comments)
 inoremap jk <Esc>|                        "exit insert mode
 nnoremap ss :w<CR>|                       "save file from normal mode
