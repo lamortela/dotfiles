@@ -83,15 +83,16 @@ set scrolloff=5
 set clipboard=unnamed
 
 "my keymap (the pipe is not part of the command, it just enables inline comments)
-inoremap jk <Esc>|                        "exit insert mode
-nnoremap ss :w<CR>|                       "save file from normal mode
-nnoremap <C-j>s :%!python -m json.tool|   "pretty print json"
-nnoremap <C-h> <C-w>h|                    "switch split left
-nnoremap <C-j> <C-w>j|                    "switch split down
-nnoremap <C-k> <C-w>k|                    "switch split up
-nnoremap <C-l> <C-w>l|                    "switch split right
-map <leader>x :bd<CR>|                    "delete buffer
-map <leader>c :!git ctags<CR><CR>|        "re/create ctags
+inoremap jk <Esc>|                                  "exit insert mode
+nnoremap ss :w<CR>|                                 "save file from normal mode
+nnoremap <C-j>s :%!python -m json.tool|             "pretty print json"
+nnoremap <C-h> <C-w>h|                              "switch split left
+nnoremap <C-j> <C-w>j|                              "switch split down
+nnoremap <C-k> <C-w>k|                              "switch split up
+nnoremap <C-l> <C-w>l|                              "switch split right
+map <leader>x :bd<CR>|                              "delete buffer
+map <leader>c :!git ctags<CR><CR>|                  "re/create ctags
+nmap <silent> <leader><Space> :FixWhitespace<CR>|   "delete trailing whitespace
 "ctags go to definition
 "ctags go back
 "nav buffers in single pane
