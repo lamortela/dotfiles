@@ -91,11 +91,9 @@ set scrolloff=5
 set tags=./.git/tags,tags
 
 " for CtrlP
-let g:ctrlp_show_hidden=1
-set wildignore+=*.png,*.jpg,*.pdf,*.swf
-let g:ctrlp_custom_ignore = '\.git$\|\.o$\|\.app$\|\.beam$\|\.dSYM\|\.ipa$\|\.csv\|tags\|public\/images$\|public\/uploads$\|log\|tmp$\|source_maps\|app\/assets\/images\|test\/reports\|node_modules\|bower_components\|dist'
-let g:ctrlp_max_files = 0
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:50'
+let g:ctrlp_max_files = 0
+let g:ctrlp_show_hidden=1
 
 " for Silver Searcher
 if executable('ag')
