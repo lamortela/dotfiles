@@ -18,16 +18,18 @@ Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
+Plugin 'bronson/vim-trailing-whitespace'
 
 call vundle#end()
 
 filetype plugin indent on
-
-" for Theme
 syntax enable
+
+" appearance
 "colorscheme molokai
+set visualbell
 
 " for vim-airline
 set laststatus=2
@@ -52,33 +54,27 @@ let g:airline_mode_map = {
     \ 't'  : 'T',
     \ }
 
-" my keymap (the pipe is not part of the command, it just enables inline comments)
-inoremap jk <Esc>|                                  "exit insert mode
-nnoremap ss :w<CR>|                                 "save file from normal mode
-nnoremap <C-j>s :%!python -m json.tool|             "pretty print json"
-nnoremap <C-h> <C-w>h|                              "switch split left
-nnoremap <C-j> <C-w>j|                              "switch split down
-nnoremap <C-k> <C-w>k|                              "switch split up
-nnoremap <C-l> <C-w>l|                              "switch split right
-map <leader>x :bd<CR>|                              "delete buffer
-map <leader>c :!git ctags<CR><CR>|                  "re/create ctags
-nmap <silent> <leader><Space> :FixWhitespace<CR>|   "delete trailing whitespace
-"ctags go to definition
-"ctags go back
-"nav buffers in single pane
-
-" look and feel
+" rulers and such
 set number
 set ruler
 set colorcolumn=100
 highlight ColorColumn ctermbg=8
-set nowrap
+set showcmd
+set cursorline
 
-" tabs converted to 2 spaces
+" tabs and white space
+set nowrap
 set expandtab
 set tabstop=2
-set shiftwidth=2
 set softtabstop=2
+set shiftwidth=2
+set autoindent
+
+" searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 
 " system clipboard support
 set clipboard=unnamed
@@ -113,3 +109,20 @@ if executable('ag')
   command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
   nnoremap \ :Ag<SPACE>
 endif
+
+" my keymap (the pipe is not part of the command, it just enables inline comments)
+inoremap jk <Esc>|                                  "exit insert mode
+nnoremap ss :w<CR>|                                 "save file from normal mode
+nnoremap <C-j>s :%!python -m json.tool|             "pretty print json"
+nnoremap <C-h> <C-w>h|                              "switch split left
+nnoremap <C-j> <C-w>j|                              "switch split down
+nnoremap <C-k> <C-w>k|                              "switch split up
+nnoremap <C-l> <C-w>l|                              "switch split right
+map <leader>x :bd<CR>|                              "delete buffer
+map <leader>c :!git ctags<CR><CR>|                  "re/create ctags
+nmap <silent> <leader><Space> :FixWhitespace<CR>|   "delete trailing whitespace
+nmap <silent> <CR> :silent noh<CR>|                 "clear search highlighting
+"ctags go to definition
+"ctags go back
+"nav buffers in single pane
+
