@@ -21,6 +21,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'ervandew/supertab'
 
 call vundle#end()
 
