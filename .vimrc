@@ -80,6 +80,7 @@ set smartcase
 set clipboard=unnamed
 
 " misc
+set backspace=indent,eol,start
 set noswapfile
 set scrolloff=5
 
