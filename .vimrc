@@ -102,7 +102,7 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " use ag in CtrlP for listing files.
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore "*.png;*.swf;*.jpg;*.pdf" -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
@@ -114,6 +114,7 @@ if executable('ag')
   command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
   nnoremap \ :Ag<SPACE>
 endif
+
 
 " my keymap (the pipe is not part of the command, it just enables inline comments)
 inoremap jk <Esc>|                                  "exit insert mode
