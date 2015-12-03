@@ -1,4 +1,5 @@
 let mapleader = "\<Space>"
+set encoding=utf-8
 
 " for Vundle
 set nocompatible
@@ -8,7 +9,6 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'sickill/vim-monokai'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
@@ -29,13 +29,13 @@ filetype plugin indent on
 syntax enable
 
 " appearance
-"colorscheme molokai
+colorscheme molokai
 set visualbell
 
 " for vim-airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:airline_theme='badwolf'
+let g:airline_theme='simple'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_inactive_collapse=1
@@ -70,6 +70,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set autoindent
+set nojoinspaces
 
 " searching
 set hlsearch
@@ -84,6 +85,7 @@ set clipboard=unnamed
 set backspace=indent,eol,start
 set noswapfile
 set scrolloff=5
+set nostartofline
 
 
 " for Ctags
