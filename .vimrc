@@ -85,8 +85,6 @@ set backspace=indent,eol,start
 set noswapfile
 set scrolloff=5
 
-" reload .vimrc when it is changed
-au BufWritePost .vimrc so $MYVIMRC
 
 " for Ctags
 set tags=./.git/tags,tags
@@ -102,7 +100,8 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " use ag in CtrlP for listing files.
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore "*.png;*.swf;*.jpg;*.pdf" -g ""'
+  " works with agignore file in $HOME
+  let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
@@ -128,6 +127,7 @@ map <leader>x :bd<CR>|                              "delete buffer
 map <leader>c :!git ctags<CR><CR>|                  "re/create ctags
 nmap <silent> <leader><Space> :FixWhitespace<CR>|   "delete trailing whitespace
 nmap <silent> <CR> :silent noh<CR>|                 "clear search highlighting
+nnoremap <C-c> :bnext\|bdelete #<CR>|               "delete buffer without deleting window
 "ctags go to definition
 "ctags go back
 "nav buffers in single pane
