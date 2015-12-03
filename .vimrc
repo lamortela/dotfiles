@@ -3,8 +3,8 @@ let mapleader = "\<Space>"
 " for Vundle
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
 
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
@@ -84,6 +84,9 @@ set clipboard=unnamed
 set backspace=indent,eol,start
 set noswapfile
 set scrolloff=5
+
+" reload .vimrc when it is changed
+au BufWritePost .vimrc so $MYVIMRC
 
 " for Ctags
 set tags=./.git/tags,tags
