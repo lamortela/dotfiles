@@ -1,10 +1,10 @@
 # ~/.tmuxinator/lt.yml
 
-name: lt 
+name: lt
 root: ~/Projects/TTM/live_teaching
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
 
 windows:
-  - server: gpo; grunt install; grunt dist; runlt 
+  - server: gpo; nvm use; grunt install; grunt build; runlt
