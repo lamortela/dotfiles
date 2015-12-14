@@ -29,6 +29,7 @@ values."
      emacs-lisp
      git
      github
+     javascript
      markdown
      osx
      (shell :variables
@@ -209,6 +210,13 @@ layers configuration. You are free to put any user code."
 
   (global-company-mode)
   (key-chord-mode 1)
+
+  ;; More room for line numbers
+  (setq linum-format " %d ")
+
+  ;; Javascript indent settings
+  (setq js2-basic-offset 2)
+  (setq js-indent-level 2)
 
   ;; Quick insert mode exist
   (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
