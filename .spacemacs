@@ -26,11 +26,11 @@ values."
      ;; better-defaults
      ;; org
      auto-completion
-     osx
      emacs-lisp
      git
      github
      markdown
+     osx
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -207,15 +207,16 @@ user code."
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
 
-  ;; Quick insert mode exist
-  (setq key-chord-two-keys-delay 0.5)
-  (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+  (global-company-mode)
   (key-chord-mode 1)
 
-  (global-company-mode)
+  ;; Quick insert mode exist
+  (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
 
+  ;; Quick buffer save
   (key-chord-define evil-normal-state-map "ss" 'save-buffer)
 
+  ;; Vimmy window nav
   (global-set-key (kbd "C-k") 'evil-window-up)
   (global-set-key (kbd "C-j") 'evil-window-down)
   (global-set-key (kbd "C-h") 'evil-window-left)
