@@ -32,7 +32,7 @@ alias la="ls -alF"
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.finder AppleshowAllFiles -bool false && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 # OSX
 alias mute="osascript -e 'set volume output muted true'"
