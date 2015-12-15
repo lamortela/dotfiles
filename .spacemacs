@@ -195,6 +195,8 @@ values."
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
    dotspacemacs-default-package-repository nil
+   ;; The ruby version manager that the ruby layer should use
+   ruby-version-manager 'rvm
    ))
 
 (defun dotspacemacs/user-init ()
@@ -219,8 +221,8 @@ layers configuration. You are free to put any user code."
   (setq linum-format "%d ")
 
   ;; Javascript indent settings
-  (setq js2-basic-offset 2)
-  (setq js-indent-level 2)
+  (setq js2-basic-offset 2
+        js-indent-level 2)
 
   ;; Quick insert mode exist
   (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
