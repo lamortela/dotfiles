@@ -51,7 +51,8 @@ values."
                                       coffee-mode
                                       )
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(
+                                    evil-search-highlight-persist)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -88,12 +89,11 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light
-                         solarized-light
                          solarized-dark
                          leuven
                          monokai
-                         zenburn)
+                         zenburn
+                         wombat)
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -209,7 +209,11 @@ user code."
 layers configuration. You are free to put any user code."
 
   (global-company-mode)
+  (global-linum-mode)
   (key-chord-mode 1)
+
+  ;; Turn off line wrap
+  (setq-default truncate-lines t)
 
   ;; More room for line numbers
   (setq linum-format " %d ")
@@ -220,6 +224,7 @@ layers configuration. You are free to put any user code."
 
   ;; Quick insert mode exist
   (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+  ;;(setq-default evil-escape-key-sequence "jk")
 
   ;; Quick buffer save
   (key-chord-define evil-normal-state-map "ss" 'save-buffer)
@@ -229,6 +234,9 @@ layers configuration. You are free to put any user code."
   (global-set-key (kbd "C-j") 'evil-window-down)
   (global-set-key (kbd "C-h") 'evil-window-left)
   (global-set-key (kbd "C-l") 'evil-window-right)
+
+  ;; Open links in org-mode
+  (evil-leader/set-key-for-mode 'org-mode "ol" 'org-open-at-point)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
