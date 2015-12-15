@@ -216,7 +216,7 @@ layers configuration. You are free to put any user code."
   (setq-default truncate-lines t)
 
   ;; More room for line numbers
-  (setq linum-format " %d ")
+  (setq linum-format "%d ")
 
   ;; Javascript indent settings
   (setq js2-basic-offset 2)
