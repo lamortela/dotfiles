@@ -61,6 +61,7 @@ alias gpo="git po"
 
 # Editors
 alias s="sublime ."
+alias space="open /Applications/Emacs.app"
 
 # process killing/grepping
 alias pk="pkill -9 \!^"
