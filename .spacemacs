@@ -89,10 +89,7 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(spacemacs-dark
-                         solarized-dark
-                         leuven
-                         monokai
-                         zenburn
+                         spacemacs-light
                          wombat)
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -197,6 +194,10 @@ values."
    dotspacemacs-default-package-repository nil
    ;; The ruby version manager that the ruby layer should use
    ruby-version-manager 'rvm
+   ;; Control the background color of code comments (t = on, nil = off)
+   spacemacs-theme-comment-bg nil
+   ;; Control the height of section titles in org mode (t = on, nil = off)
+   spacemacs-theme-org-height nil
    ))
 
 (defun dotspacemacs/user-init ()
@@ -230,12 +231,6 @@ layers configuration. You are free to put any user code."
 
   ;; Quick buffer save
   (key-chord-define evil-normal-state-map "ss" 'save-buffer)
-
-  ;; Vimmy window nav
-  (global-set-key (kbd "C-k") 'evil-window-up)
-  (global-set-key (kbd "C-j") 'evil-window-down)
-  (global-set-key (kbd "C-h") 'evil-window-left)
-  (global-set-key (kbd "C-l") 'evil-window-right)
 
   ;; Open links in org-mode
   (evil-leader/set-key-for-mode 'org-mode "ol" 'org-open-at-point)
