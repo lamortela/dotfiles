@@ -221,6 +221,9 @@ layers configuration. You are free to put any user code."
   ;; More room for line numbers
   (setq linum-format "%d ")
 
+  ;; Change powerline separator
+  (setq powerline-default-separator 'alternate)
+
   ;; Javascript indent settings
   (setq js2-basic-offset 2
         js-indent-level 2)
