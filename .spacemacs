@@ -115,7 +115,7 @@ values."
    ;; Emacs commands (M-x).
    ;; By default the command key is `:' so ex-commands are executed like in Vim
    ;; with `:' and Emacs commands are executed with `<leader> :'.
-   dotspacemacs-command-key ":"
+   dotspacemacs-command-key ","
    ;; If non nil `Y' is remapped to `y$'. (default t)
    dotspacemacs-remap-Y-to-y$ t
    ;; Location where to auto-save files. Possible values are `original' to
@@ -214,6 +214,7 @@ layers configuration. You are free to put any user code."
   (global-company-mode)
   (global-linum-mode)
   (key-chord-mode 1)
+  (setq key-chord-two-keys-delay 0.3)
 
   ;; Turn off line wrap
   (setq-default truncate-lines t)
@@ -235,9 +236,22 @@ layers configuration. You are free to put any user code."
   ;; Quick buffer save
   (key-chord-define evil-normal-state-map "ss" 'save-buffer)
 
-  ;; Open links in org-mode
+  ;; Open links in org mode.  For instance, hyperlinks in documentation.
   (evil-leader/set-key-for-mode 'org-mode "ol" 'org-open-at-point)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(mac-right-command-modifier (quote meta)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
