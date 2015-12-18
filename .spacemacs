@@ -48,7 +48,6 @@ values."
    dotspacemacs-additional-packages '(
                                       key-chord
                                       osx-clipboard
-                                      coffee-mode
                                       )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(
@@ -213,6 +212,7 @@ layers configuration. You are free to put any user code."
 
   (global-company-mode)
   (global-linum-mode)
+  (golden-ratio-mode)
   (key-chord-mode 1)
   (setq key-chord-two-keys-delay 0.3)
 
