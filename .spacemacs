@@ -29,6 +29,7 @@ values."
      emacs-lisp
      git
      github
+     html
      javascript
      markdown
      osx
@@ -214,7 +215,7 @@ layers configuration. You are free to put any user code."
   (global-linum-mode)
   (golden-ratio-mode)
   (key-chord-mode 1)
-  (setq key-chord-two-keys-delay 0.3)
+  (setq key-chord-two-keys-delay 0.5)
 
   ;; Turn off line wrap
   (setq-default truncate-lines t)
@@ -227,7 +228,8 @@ layers configuration. You are free to put any user code."
 
   ;; Javascript indent settings
   (setq js2-basic-offset 2
-        js-indent-level 2)
+        js-indent-level 2
+        css-indent-offset 2)
 
   ;; Quick insert mode exist
   (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
