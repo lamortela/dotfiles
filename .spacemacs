@@ -174,6 +174,10 @@ values."
    ;; scrolling overrides the default behavior of Emacs which recenters the
    ;; point when it reaches the top or bottom of the screen. (default t)
    dotspacemacs-smooth-scrolling t
+   ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
+   ;; derivatives. If set to `relative', also turns on relative line numbers.
+   ;; (default nil)
+   dotspacemacs-line-numbers t
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
@@ -198,6 +202,12 @@ values."
    spacemacs-theme-comment-bg nil
    ;; Control the height of section titles in org mode (t = on, nil = off)
    spacemacs-theme-org-height nil
+   ;; Delete whitespace while saving buffer. Possible values are `all'
+   ;; to aggressively delete empty line and long sequences of whitespace,
+   ;; `trailing' to delete only the whitespace at end of lines, `changed'to
+   ;; delete only whitespace for changed lines or `nil' to disable cleanup.
+   ;; (default nil)
+   dotspacemacs-whitespace-cleanup nil
    ))
 
 (defun dotspacemacs/user-init ()
@@ -212,7 +222,7 @@ user code."
 layers configuration. You are free to put any user code."
 
   (global-company-mode)
-  (global-linum-mode)
+  ;; (global-linum-mode)
   (golden-ratio-mode)
   (key-chord-mode 1)
   (setq key-chord-two-keys-delay 0.5)
