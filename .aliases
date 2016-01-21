@@ -23,7 +23,6 @@ alias ttmab="cd ~/Projects/TTM/avatar-builder"
 alias ttmm="cd ~/Projects/TTM/meta"
 
 # TTM specific other
-alias ttmsfl="ttmscalr farm:list"
 alias giui="~/Projects/TTM/gi/gi; open issues.html; sleep 5; rm issues.html"
 alias gi="~/Projects/TTM/gi/gi 1"
 
@@ -60,13 +59,12 @@ alias gst="git st"
 alias gpo="git po"
 
 # Editors
-alias s="sublime ."
 alias space="open /Applications/Emacs.app"
 
 # process killing/grepping
 alias pk="pkill -9 \!^"
 
-# Search history
+# Search bash history
 alias gh="history | grep "
 
 # Postgres
@@ -88,10 +86,8 @@ alias runlt="ttmlt; grunt build; nf start --port 5050 -j Procfile.debug"
 alias runab="ttmab; grunt serve:dist"
 
 # Testing TTM apps
-alias startats="rake db:test:prepare; RAILS_ENV=test rake servers:start"
-alias stopats="RAILS_ENV=test rake servers:stop"
-alias jtesta="bundle exec rake spec:javascript"
-alias ftesta="ruby test/fast/runner.rb"
+alias ttmtestup="rake db:test:prepare; RAILS_ENV=test rake servers:start"
+alias ttmtestdown="RAILS_ENV=test rake servers:stop"
 
 # Reloading profile
 alias sop="source ~/.bash_profile"
