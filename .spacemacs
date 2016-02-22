@@ -231,7 +231,6 @@ layers configuration. You are free to put any user code."
   ;; (global-linum-mode)
   (golden-ratio-mode)
   (key-chord-mode 1)
-  (setq key-chord-two-keys-delay 0.5)
 
   ;; Turn off line wrap
   (setq-default truncate-lines t)
