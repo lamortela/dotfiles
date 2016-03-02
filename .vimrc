@@ -118,7 +118,7 @@ endif
 
 
 " my keymap (the pipe is not part of the command, it just enables inline comments)
-inoremap jk <Esc>|                                  "exit insert mode
+inoremap fd <Esc>|                                  "exit insert mode
 nnoremap ss :w<CR>|                                 "save file from normal mode
 nnoremap <C-j>s :%!python -m json.tool|             "pretty print json"
 nnoremap <C-h> <C-w>h|                              "switch split left

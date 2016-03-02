@@ -23,22 +23,22 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; better-defaults
-     ;; org
      auto-completion
+     ;; better-defaults
      emacs-lisp
      git
-     github
-     html
-     javascript
      markdown
-     osx
+     ;; org
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
      spell-checking
      syntax-checking
      version-control
+     github
+     html
+     javascript
+     osx
      ruby
      ruby-on-rails
      )
@@ -123,11 +123,21 @@ values."
    dotspacemacs-command-key ","
    ;; If non nil `Y' is remapped to `y$'. (default t)
    dotspacemacs-remap-Y-to-y$ t
+   ;; Name of the default layout (default "Default")
+   dotspacemacs-default-layout-name "Default"
+   ;; If non nil the default layout name is displayed in the mode-line.
+   ;; (default nil)
+   dotspacemacs-display-default-layout nil
+   ;; If non nil then the last auto saved layouts are resume automatically upon
+   ;; start. (default nil)
+   dotspacemacs-auto-resume-layouts nil
    ;; Location where to auto-save files. Possible values are `original' to
    ;; auto-save the file in-place, `cache' to auto-save the file to another
    ;; file stored in the cache directory and `nil' to disable auto-saving.
    ;; (default 'cache)
    dotspacemacs-auto-save-file-location 'cache
+   ;; Maximum number of rollback slots to keep in the cache. (default 5)
+   dotspacemacs-max-rollback-slots 5
    ;; If non nil then `ido' replaces `helm' for some commands. For now only
    ;; `find-files' (SPC f f), `find-spacemacs-file' (SPC f e s), and
    ;; `find-contrib-file' (SPC f e c) are replaced. (default nil)
@@ -201,18 +211,18 @@ values."
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
    dotspacemacs-default-package-repository nil
+   ;; Delete whitespace while saving buffer. Possible values are `all'
+   ;; to aggressively delete empty line and long sequences of whitespace,
+   ;; `trailing' to delete only the whitespace at end of lines, `changed'to
+   ;; delete only whitespace for changed lines or `nil' to disable cleanup.
+   ;; (default nil)
+   dotspacemacs-whitespace-cleanup 'trailing
    ;; The ruby version manager that the ruby layer should use
    ruby-version-manager 'rvm
    ;; Control the background color of code comments (t = on, nil = off)
    spacemacs-theme-comment-bg nil
    ;; Control the height of section titles in org mode (t = on, nil = off)
    spacemacs-theme-org-height nil
-   ;; Delete whitespace while saving buffer. Possible values are `all'
-   ;; to aggressively delete empty line and long sequences of whitespace,
-   ;; `trailing' to delete only the whitespace at end of lines, `changed'to
-   ;; delete only whitespace for changed lines or `nil' to disable cleanup.
-   ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
    ))
 
 (defun dotspacemacs/user-init ()
@@ -228,15 +238,15 @@ This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
 
   (global-company-mode)
-  ;; (global-linum-mode)
   (golden-ratio-mode)
   (key-chord-mode 1)
 
+  ;; Increase key-chord delays
+  (setq key-chord-two-keys-delay 0.2)
+  (setq key-chord-one-key-delay 0.3)
+
   ;; Turn off line wrap
   (setq-default truncate-lines t)
-
-  ;; More room for line numbers
-  (setq linum-format "%d ")
 
   ;; Change powerline separator
   (setq powerline-default-separator 'alternate)
@@ -245,10 +255,6 @@ layers configuration. You are free to put any user code."
   (setq js2-basic-offset 2
         js-indent-level 2
         css-indent-offset 2)
-
-  ;; Quick insert mode exist
-  (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
-  ;;(setq-default evil-escape-key-sequence "jk")
 
   ;; Quick buffer save
   (key-chord-define evil-normal-state-map "ss" 'save-buffer)
