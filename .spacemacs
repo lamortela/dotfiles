@@ -230,6 +230,10 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
+
+  ;; Fullscreen magit status buffer
+  (setq-default git-magit-status-fullscreen t)
+
   )
 
 (defun dotspacemacs/user-config ()
@@ -261,6 +265,9 @@ layers configuration. You are free to put any user code."
 
   ;; Open links in org mode.  For instance, hyperlinks in documentation.
   (evil-leader/set-key-for-mode 'org-mode "ol" 'org-open-at-point)
+
+  ;; Git repo directory for magit auto-complete
+  (setq magit-repository-directories '("~/Projects/anth/"))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
