@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Load all the shell dotfiles
+for file in ~/.{path,bash_prompt,exports,aliases,functions,secrets}; do
+  [ -r "$file" ] && source "$file"
+done;
+unset file;
+
 # Enable Homebrew bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
