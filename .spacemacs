@@ -263,7 +263,7 @@ This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
 
   (global-company-mode)
-  (golden-ratio-mode)
+  ;; (golden-ratio-mode)
   (key-chord-mode 1)
 
   ;; Increase key-chord delays
