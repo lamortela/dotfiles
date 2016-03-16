@@ -32,7 +32,7 @@ values."
      (shell :variables
             shell-default-shell 'ansi-term
             shell-default-term-shell "/bin/bash"
-            shell-default-position 'full)
+            shell-default-position 'top)
      spell-checking
      syntax-checking
      version-control
@@ -288,7 +288,7 @@ layers configuration. You are free to put any user code."
   (evil-leader/set-key-for-mode 'org-mode "ol" 'org-open-at-point)
 
   ;; Git repo directory for magit auto-complete
-  (setq magit-repository-directories '("~/Projects/anth/"))
+  (setq magit-repository-directories '("~/Projects/anth/" "~/Projects/TTM/"))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
