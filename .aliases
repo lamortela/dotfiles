@@ -21,6 +21,7 @@ alias ttmlp="cd ~/Projects/TTM/lesson-player"
 alias ttmlt="cd ~/Projects/TTM/live_teaching"
 alias ttmab="cd ~/Projects/TTM/avatar-builder"
 alias ttmm="cd ~/Projects/TTM/meta"
+alias ttml="cd ~/Projects/TTM/login/"
 
 # TTM specific other
 alias giui="~/Projects/TTM/gi/gi; open issues.html; sleep 5; rm issues.html"
@@ -84,6 +85,7 @@ alias runrepnr="ttmr; bundle exec foreman s -f Procfile.NewRelic"
 alias runlp="ttmlp; grunt serve:dist"
 alias runlt="ttmlt; grunt build; nf start --port 5050 -j Procfile.debug"
 alias runab="ttmab; grunt serve:dist"
+alias runl="ttml; bundle exec foreman start -f Procfile.development"
 
 # Testing TTM apps
 alias ttmtestup="rake db:test:prepare; RAILS_ENV=test rake servers:start"
