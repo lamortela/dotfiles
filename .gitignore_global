@@ -1,5 +1,4 @@
 anth-test-data/
-anths_test_district/
 my-notes/
 .secrets
 .ttm_scalr_access_info
@@ -7,7 +6,3 @@ my-notes/
 .DS_Store
 db-backups/
 tags
-
-admins.csv
-students_new_lp.csv
-teachers.csv
