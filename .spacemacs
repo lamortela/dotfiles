@@ -269,6 +269,11 @@ layers configuration. You are free to put any user code."
   ;; (golden-ratio-mode)
   (key-chord-mode 1)
 
+  ;; Change fill column from 80 to 100
+  (setq-default fill-column 100)
+  (add-hook 'prog-mode-hook 'turn-on-fci-mode)
+  (add-hook 'markdown-mode-hook 'turn-on-fci-mode)
+
   ;; Increase key-chord delays
   (setq key-chord-two-keys-delay 0.2)
   (setq key-chord-one-key-delay 0.3)
