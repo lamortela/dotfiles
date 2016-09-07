@@ -22,7 +22,7 @@ function psg() {
 # Rails Console shortcut
 function rc() {
 if [ -z "$@" ]; then
-  rails c
+  foreman run rails c
 else
   ttmscalr rails_c -f $@
 fi
