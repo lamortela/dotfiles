@@ -1,26 +1,24 @@
 #! /usr/bin/env bash
 
-# ----- Helpful functions -----
-
 # Display colors
-function colortest() {
+colortest() {
   for i in {0..255}; do
     echo " $i:  $(tput setaf $i)This is a test$(tput sgr0) $(tput setab $i)This is a test$(tput sgr0)";
   done;
 }
 
 # Print PATH in easier to read format
-function mypath() {
+mypath() {
   echo -e ${PATH//:/\\n}
 }
 
 # Grep for a process
-function psg() {
+psg() {
   ps aux | grep $@
 }
 
 # Rails Console shortcut
-function rc() {
+rc() {
 if [ -z "$@" ]; then
   foreman run rails c
 else
@@ -30,7 +28,7 @@ fi
 
 # Test TTM Branch
 # Must be run from a TTM repo
-function tb() {
+tb() {
   git checkout rc
   git reset --hard origin/rc
   git pull
@@ -38,16 +36,21 @@ function tb() {
 }
 
 # ttmscalr config shortcut
-function ttmcfg() {
+ttmcfg() {
   ttmscalr config -f $@
 }
 
 # ttmscalr ssh shortcut
-function ttmssh() {
+ttmssh() {
   ttmscalr ssh debug.1 -f $@
 }
 
 # open buffer output in vim
-function v() {
+v() {
   $@ | vim -R -
+}
+
+# get the weather for a city
+weather() {
+  curl -s http://wttr.in/$1
 }
