@@ -275,14 +275,22 @@ layers configuration. You are free to put any user code."
   (add-hook 'markdown-mode-hook 'turn-on-fci-mode)
 
   ;; Increase key-chord delays
-  (setq key-chord-two-keys-delay 0.2)
-  (setq key-chord-one-key-delay 0.3)
+  (setq-default key-chord-two-keys-delay 0.2
+                key-chord-one-key-delay 0.3)
 
   ;; Turn off line wrap
   (setq-default truncate-lines t)
 
   ;; Change powerline separator
-  (setq powerline-default-separator 'alternate)
+  (setq-default powerline-default-separator 'alternate)
+
+  ;; Generic tab settings
+  (setq-default indent-tabs-mode nil
+                tab-width 2)
+
+  ;; Bash script tab settings
+  (setq sh-basic-offset 2
+        sh-indentation 2)
 
   ;; Javascript indent settings
   (setq js2-basic-offset 2
