@@ -7,4 +7,4 @@ root: ~/Projects/TTM/lesson-player
 # pre_window: rbenv shell 2.0.0-p247
 
 windows:
-  - server: gpo; npm install; grunt install; runlp
+  - server: clear

@@ -4,4 +4,4 @@ name: ab
 root: ~/Projects/TTM/avatar-builder
 
 windows:
-  - server: gpo; grunt
+  - server: clear

@@ -7,4 +7,4 @@ root: ~/Projects/TTM/live_teaching
 # pre_window: rbenv shell 2.0.0-p247
 
 windows:
-  - server: gpo; nvm use; grunt install; runlt
+  - server: clear

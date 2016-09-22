@@ -10,5 +10,5 @@ windows:
   - server:
       layout: 4368,425x100,0,0{212x100,0,0,1,212x100,213,0,2}
       panes:
-        - gpo; bundle install; rake db:migrate; runrep
+        - clear
         - clear
