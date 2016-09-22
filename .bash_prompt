@@ -2,12 +2,9 @@
 
 # README
 # A prompt builder hacked together from a bunch of samples out there
-# Thank you bash-it and those whose themes I partially boosted
+# Thank you bash-it and those whose themes I partially stole
 # Requires a terminal that supports 256 colors
 # Requires a Powerline-patched font
-
-# TODO
-# 1. Should make a color change function that takes the color code or name
 
 PROMPT=""
 PROMPT_SEPERATOR='|'
