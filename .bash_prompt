@@ -43,30 +43,30 @@ parse_git_dirty() {
     [[ "${staged_count}" -gt 0 ]] && details+=" ${RESET}${BOLD}${BLUE}${GIT_STAGED}${staged_count}"
     [[ "${unstaged_count}" -gt 0 ]] && details+=" ${RESET}${BOLD}${YELLOW}${GIT_UNSTAGED}${unstaged_count}"
     [[ "${untracked_count}" -gt 0 ]] && details+=" ${RESET}${BOLD}${ORANGE}${GIT_UNTRACKED}${untracked_count}"
+    [[ "${staged_count}" -eq 0 ]] && [[ "${unstaged_count}" -eq 0 ]] && [[ "${untracked_count}" -eq 0 ]] && details+=" ${RESET}${BOLD}${GREEN}${GIT_CLEAN}"
   fi
 
   if [[ -n "${details}" ]]; then
     echo -n "${details}"
-  else
-    echo -n " ${RESET}${BOLD}${GREEN}${GIT_CLEAN}"
   fi
 }
 
 # Get the current git branch
 parse_git_branch() {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+  local branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+  echo -n "${RESET}${MAGENTA}${branch}"
 }
 
 # Build the git branch portion of the prompt
 prompt_branch_icon() {
   if [[ -n "$(git branch --no-color 2> /dev/null)" ]]; then
-    echo -n " ${RESET}${MAGENTA}${GIT_BRANCH}"
+    echo -n "${RESET}${MAGENTA}${GIT_BRANCH}"
   fi
 }
 
 # Build the git portion of the prompt
 prompt_git() {
-  echo -n " \$(prompt_branch_icon)\$(parse_git_branch)"
+  echo -n " \$(prompt_branch_icon)\$(parse_git_branch)\$(parse_git_dirty)"
 }
 
 # Put current time in 12 hour format at beginning of prompt
