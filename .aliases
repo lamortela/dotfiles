@@ -90,6 +90,7 @@ alias runl="ttml; bundle exec foreman start -f Procfile.development"
 # Testing TTM apps
 alias ttmtestup="rake db:test:prepare; RAILS_ENV=test rake servers:start"
 alias ttmtestdown="RAILS_ENV=test rake servers:stop"
+alias repeatm="/Users/anthlam/Projects/TTM/anths-scripts/repeat-m.sh"
 
 # Reloading profile
 alias sop="source ~/.bash_profile"
