@@ -12,6 +12,7 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Projects"
 alias anth="cd ~/Projects/anth"
+alias dot="cd ~/Projects/anth/dotfiles"
 
 # TTM specific navigation
 alias ttm="cd ~/Projects/TTM"
@@ -27,8 +28,9 @@ alias ttml="cd ~/Projects/TTM/login/"
 alias giui="~/Projects/TTM/gi/gi; open issues.html; sleep 5; rm issues.html"
 alias gi="~/Projects/TTM/gi/gi 1"
 
-# Listing
+# File management
 alias la="ls -altF"
+alias cat="cat -n"
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
