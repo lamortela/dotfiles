@@ -3,4 +3,4 @@
 # path
 RVM_HOME=~/.rvm
 SCALR_HOME=~/Projects/TTM/scalr
-export PATH="/usr/local/bin:/usr/local/sbin:$RVM_HOME/bin:$SCALR_HOME/bin:$PATH";
+export PATH="/usr/local/Cellar:/usr/local/bin:/usr/local/sbin:$RVM_HOME/bin:$SCALR_HOME/bin:$PATH";
