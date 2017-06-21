@@ -7,6 +7,12 @@ colortest() {
   done;
 }
 
+# Cleanup git local branches that don't have a remote
+glbclean() {
+  git fetch --all -p
+  git branch -vv | grep ": gone]" | awk '{ print $1 }' | xargs -n 1 git branch -D
+}
+
 # Print PATH in easier to read format
 mypath() {
   echo -e ${PATH//:/\\n}
