@@ -20,11 +20,11 @@ GIT_UNTRACKED='✚'
 BLACK=$(tput setaf 0)
 RED=$(tput setaf 160)
 GREEN=$(tput setaf 2)
-YELLOW=$(tput setaf 226)
+YELLOW=$(tput setaf 11)
 ORANGE=$(tput setaf 208)
-BLUE=$(tput setaf 21)
-PURPLE=$(tput setaf 4)
-MAGENTA=$(tput setaf 5)
+BLUE=$(tput setaf 27)
+PURPLE=$(tput setaf 55)
+MAGENTA=$(tput setaf 126)
 CYAN=$(tput setaf 6)
 WHITE=$(tput setaf 7)
 PINK=$(tput setaf 201)
@@ -54,13 +54,13 @@ parse_git_dirty() {
 # Get the current git branch
 parse_git_branch() {
   local branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
-  echo -n "${RESET}${MAGENTA}${branch}"
+  echo -n "${RESET}${RED}${branch}"
 }
 
 # Build the git branch portion of the prompt
 prompt_branch_icon() {
   if [[ -n "$(git branch --no-color 2> /dev/null)" ]]; then
-    echo -n "${RESET}${MAGENTA}${GIT_BRANCH}"
+    echo -n "${RESET}${RED}${GIT_BRANCH}"
   fi
 }
 
@@ -79,8 +79,8 @@ prompt_context() {
   local left_sq_bracket="${RESET}${BOLD}${CYAN}["
   local right_sq_bracket="${RESET}${BOLD}${CYAN}]"
   local at_symbol="${RESET}${BOLD}${WHITE}@"
-  local user_name="${RESET}${CYAN}\u"
-  local host_name="${RESET}${CYAN}\H"
+  local user_name="${RESET}${GREEN}\u"
+  local host_name="${RESET}${MAGENTA}\H"
 
   if [[ -n ${SSH_CLIENT} ]]; then
     echo -n " ${left_sq_bracket}${user_name}${at_symbol}${host_name}${right_sq_bracket}"
