@@ -10,7 +10,7 @@ unset file;
 [ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
 
 # For bash completion
-source ~/.tmuxinator.bash;
+source ~/.bin/.tmuxinator.bash;
 
 # Append to bash history instead of overwriting
 shopt -s histappend;
