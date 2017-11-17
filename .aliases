@@ -95,4 +95,4 @@ alias ttmtestdown="RAILS_ENV=test rake servers:stop"
 alias repeatm="/Users/anthlam/Projects/TTM/anths-scripts/repeat-m.sh"
 
 # Reloading profile
-alias sop="source ~/.bash_profile"
+alias sop="source ~/.bash_profile; rvm reload"
