@@ -1,23 +1,23 @@
 #!/usr/bin/env bash
 
 # default editor
-export EDITOR=vim
-export FCEDIT=/usr/local/bin/vim
+EDITOR=vim
+FCEDIT=/usr/local/bin/vim
 
 # nvm
-export NVM_DIR=~/.nvm;
+NVM_DIR=~/.nvm;
 
 # CLI colors
-export CLICOLOR=1;
+CLICOLOR=1;
 
 # Colored grep output
-export GREP_OPTIONS="--color=auto";
+GREP_OPTIONS="--color=auto";
 
 # Place current directory in bash title/tab
-export PROMPT_COMMAND='echo -ne "\033]0; ${PWD##*/}\007"';
+PROMPT_COMMAND='echo -ne "\033]0; ${PWD##*/}\007"';
 
 #share bash history across sessions/tabs
-export HISTSIZE=25000;
-export HISTFILESIZE=10000;
-export HISTCONTROL=ignoredups:erasedups;
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND";
+HISTSIZE=25000;
+HISTFILESIZE=10000;
+HISTCONTROL=ignoredups:erasedups;
+PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND";

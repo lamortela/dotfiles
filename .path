@@ -6,4 +6,4 @@ PATH="/usr/local/bin:$(getconf PATH)"
 # path
 RVM_HOME=$HOME/.rvm/bin
 SCALR_HOME=~/Projects/TTM/scalr
-export PATH="/usr/local/Cellar:/usr/local/sbin:$SCALR_HOME/bin:$PATH:$RVM_HOME"
+PATH="/usr/local/Cellar:/usr/local/sbin:$SCALR_HOME/bin:$PATH:$RVM_HOME"
