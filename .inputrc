@@ -7,12 +7,18 @@ set completion-ignore-case on
 # List all matches when multiple possible completions exist
 set show-all-if-ambiguous on
 
-# Use already entered text when searching command history
-"\e[B": history-search-forward
-"\e[A": history-search-backward
-
 # Show file type in completions
 set visible-stats on
 
 # Up default number of completions to list before asking
 set completion-query-items 200
+
+# Make key sequence timeout shorter
+set keyseq-timeout 250
+
+# Use already entered text when searching command history
+"\e[B": history-search-forward
+"\e[A": history-search-backward
+
+# Map fd to exit bash insert mode
+"fd": vi-movement-mode
