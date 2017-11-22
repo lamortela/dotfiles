@@ -96,3 +96,6 @@ alias repeatm="/Users/anthlam/Projects/TTM/anths-scripts/repeat-m.sh"
 
 # Reloading profile
 alias sop="source ~/.bash_profile; rvm reload"
+
+# Better silver searcher default
+alias ag="ag -u"
