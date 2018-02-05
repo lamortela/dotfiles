@@ -21,3 +21,7 @@ HISTSIZE=25000;
 HISTFILESIZE=10000;
 HISTCONTROL=ignoredups:erasedups;
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND";
+
+# virtualenvwrapper environments home
+VIRTUALENVWRAPPER_PYTHON=$BREW_PYTHON_HOME/python
+WORKON_HOME=$HOME/.virtualenvs

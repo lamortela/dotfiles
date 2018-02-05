@@ -28,6 +28,9 @@ ssh-add -A 2>/dev/null;
 # For nvm installed via homebrew
 source $(brew --prefix nvm)/nvm.sh;
 
+# For virtualenvwrapper
+source /usr/local/bin/virtualenvwrapper.sh
+
 # Load RVM into a shell session *as a function*
 # This must be at the end of the file to avoid a warning when
 # running the rvm command
