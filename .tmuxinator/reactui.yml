@@ -1,0 +1,14 @@
+# ~/.tmuxinator/reactui.yml
+
+name: reactui
+root: ~/Projects/itc/reactui
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+windows:
+  - server:
+      layout: 4368,425x100,0,0{212x100,0,0,1,212x100,213,0,2}
+      panes:
+        - clear
+        - clear
