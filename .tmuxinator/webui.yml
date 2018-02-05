@@ -1,7 +1,7 @@
-# ~/.tmuxinator/dw.yml
+# ~/.tmuxinator/webui.yml
 
-name: dw
-root: ~/Projects/TTM/reporting
+name: webui
+root: ~/Projects/itc/webui
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247

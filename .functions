@@ -23,32 +23,12 @@ psg() {
   ps aux | grep $@
 }
 
-# Rails Console shortcut
-rc() {
-if [ -z "$@" ]; then
-  foreman run rails c
-else
-  ttmscalr rails_c -f $@
-fi
-}
-
-# Test TTM Branch
-# Must be run from a TTM repo
-tb() {
+# Merge branch into master locally (to similar CI)
+mb() {
   git checkout rc
   git reset --hard origin/rc
   git pull
   git pull --no-ff --no-edit origin $@
-}
-
-# ttmscalr config shortcut
-ttmcfg() {
-  ttmscalr config -f $@
-}
-
-# ttmscalr ssh shortcut
-ttmssh() {
-  ttmscalr ssh debug.1 -f $@
 }
 
 # open buffer output in vim

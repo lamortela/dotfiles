@@ -1,7 +1,7 @@
-# ~/.tmuxinator/login.yml
+# ~/.tmuxinator/itcapi.yml
 
-name: login
-root: ~/Projects/TTM/login
+name: itcapi
+root: ~/Projects/itc/itcapi
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
