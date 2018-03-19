@@ -13,6 +13,14 @@ glbclean() {
   git branch -vv | grep ": gone]" | awk '{ print $1 }' | xargs -n 1 git branch -D
 }
 
+# Merge branch into master locally (to similar CI)
+mb() {
+  git checkout rc
+  git reset --hard origin/rc
+  git pull
+  git pull --no-ff --no-edit origin $@
+}
+
 # Print PATH in easier to read format
 mypath() {
   echo -e ${PATH//:/\\n}
@@ -23,12 +31,9 @@ psg() {
   ps aux | grep $@
 }
 
-# Merge branch into master locally (to similar CI)
-mb() {
-  git checkout rc
-  git reset --hard origin/rc
-  git pull
-  git pull --no-ff --no-edit origin $@
+# Attach tmux session
+ta() {
+  tmux a -t $@
 }
 
 # open buffer output in vim
