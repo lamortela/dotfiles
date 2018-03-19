@@ -6,4 +6,5 @@ PATH="/usr/local/bin:$(getconf PATH)"
 # path
 RVM_HOME=$HOME/.rvm/bin
 BREW_PYTHON_HOME=/usr/local/opt/python/libexec/bin
-PATH="/usr/local/Cellar:/usr/local/sbin:$BREW_PYTHON_HOME:$PATH:$RVM_HOME"
+ANDROID_PLATFORM_TOOLS=$HOME/Library/Android/sdk/platform-tools
+PATH="/usr/local/Cellar:/usr/local/sbin:$BREW_PYTHON_HOME:$ANDROID_PLATFORM_TOOLS:$PATH:$RVM_HOME"
