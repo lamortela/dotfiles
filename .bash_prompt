@@ -23,7 +23,7 @@ GREEN=$(tput setaf 2)
 YELLOW=$(tput setaf 11)
 ORANGE=$(tput setaf 208)
 BLUE=$(tput setaf 27)
-PURPLE=$(tput setaf 55)
+PURPLE=$(tput setaf 4)
 MAGENTA=$(tput setaf 126)
 CYAN=$(tput setaf 6)
 WHITE=$(tput setaf 7)
@@ -70,8 +70,8 @@ prompt_git() {
 }
 
 # Put current time in 12 hour format at beginning of prompt
-prompt_time() {
-  echo -n "${RESET}${PINK}\T"
+prompt_timestamp() {
+  echo -n "${RESET}${PINK}\D{%F} \t"
 }
 
 # Build user and host portion of the prompt
@@ -100,7 +100,7 @@ prompt_end(){
 }
 
 build_prompt() {
-  prompt_time
+  prompt_timestamp
   prompt_context
   prompt_dir
   prompt_git
