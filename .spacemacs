@@ -337,8 +337,15 @@ layers configuration. You are free to put any user code."
   (setq js2-include-node-externs t)
 
   ;; Change fill column from 80 to 100
-  (setq-default fill-column 120)
-  (add-hook 'prog-mode-hook 'turn-on-fci-mode)
+  (setq-default fill-column 80)
+  (add-hook 'prog-mode-hook
+            (lambda ()
+              (fci-mode t)
+              (setq fill-column 95)))
+  (add-hook 'python-mode-hook
+            (lambda ()
+              (fci-mode t)
+              (setq python-fill-column 95)))
   (add-hook 'markdown-mode-hook 'turn-on-fci-mode)
 
   ;; Increase key-chord delays
