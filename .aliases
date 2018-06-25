@@ -31,23 +31,24 @@ alias unmute="osascript -e 'set volume 3'"
 alias emptytrash="rm -rfv ~/.Trash"
 
 # git shortcuts
-alias gbr="git br"
-alias gci="git ci"
-alias gcl="git cl"
-alias gco="git co"
-alias gd="git diff"
-alias gf="git f"
-alias gg="git grep"
-alias gla="git la"
-alias glds="git lds -25"
-alias gldsb="git lds -50"
-alias gldr="git ldr -25"
-alias grh="git rh"
-alias grhm="git rhm"
-alias grs="git rs"
-alias gs="git s"
-alias gst="git st"
-alias gpo="git po"
+alias gbr="git br"           # branch
+alias gci="git ci"           # commit
+alias gcl="git cl"           # clone
+alias gco="git co"           # checkout
+alias gd="git diff"          # diff --word-diff
+alias gf="git f"             # ls-files | grep -i
+alias gg="git grep"          # grep -Ii
+alias gla="git la"           # config -l | grep alias | cut -c 7-
+alias glds="git lds -25"     # log --pretty=format:%C(yellow)%h\ %C(cyan)%ad%Cred%d\ %Creset%s%C(magenta)\ [%cn] --decorate --date=short --graph
+alias gldsb="git lds -50"    # log --pretty=format:%C(yellow)%h\ %C(cyan)%ad%Cred%d\ %Creset%s%C(magenta)\ [%cn] --decorate --date=relative --graph
+alias gldr="git ldr -25"     # log --oneline --decorate --graph
+alias grh="git rh"           # reset --hard
+alias grhm="git rhm"         # reset --hard origin/master
+alias grs="git rs"           # reset --soft HEAD^
+alias gs="git s"             # status -s
+alias gst="git st"           # status
+alias gpo="git po"           # pull --no-edit origin
+alias gdmb="git dmb"         # branch --merged | egrep -v "(^\*|master|staging|production)" | xargs git branch -d
 
 # Editors
 alias space="open /Applications/Emacs.app"
