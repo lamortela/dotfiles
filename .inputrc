@@ -21,4 +21,4 @@ set keyseq-timeout 250
 "\e[A": history-search-backward
 
 # Map fd to exit bash insert mode
-"fd": vi-movement-mode
+# "fd": vi-movement-mode
