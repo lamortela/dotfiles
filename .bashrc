@@ -28,8 +28,20 @@ ssh-add -A 2>/dev/null;
 # For nvm installed via homebrew
 source $(brew --prefix nvm)/nvm.sh;
 
-# For virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper.sh
+# Initialize pyenv when a new shell is opened
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+# Initialize pyenv-virtualenv when a new shell is opened
+if which pyenv-virtualenv-init > /dev/null; then
+  eval "$(pyenv virtualenv-init -)";
+fi
+
+# Initialize pyenv-virtualenvwrapper when a new shell is opened
+if which pyenv-virtualenvwrapper > /dev/null; then
+  pyenv virtualenvwrapper;
+fi
 
 # Load RVM into a shell session *as a function*
 # This must be at the end of the file to avoid a warning when

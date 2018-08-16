@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 # default editor
-EDITOR=vim
-FCEDIT=/usr/local/bin/vim
+EDITOR=vim;
+PSQL_EDITOR="vim -u NONE";
+FCEDIT=/usr/local/bin/vim;
 
 # nvm
 NVM_DIR=~/.nvm;
@@ -23,5 +24,7 @@ HISTCONTROL=ignoredups:erasedups;
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND";
 
 # virtualenvwrapper environments home
-VIRTUALENVWRAPPER_PYTHON=$BREW_PYTHON_HOME/python
-WORKON_HOME=$HOME/.virtualenvs
+WORKON_HOME=$HOME/.virtualenvs;
+
+# make virtualenvwrapper to use pyenv when creating Python environments
+PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true";
