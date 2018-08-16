@@ -18,7 +18,7 @@ alias dot="cd ~/Projects/anth/dotfiles"
 alias itc="cd ~/Projects/itc"
 
 # File management
-alias la="ls -altF"
+alias la="ls -alF"
 alias cat="cat -n"
 
 # Show/hide hidden files in Finder
