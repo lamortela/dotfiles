@@ -71,3 +71,6 @@ alias sop="source ~/.bash_profile; rvm reload"
 
 # Better silver searcher default
 alias ag="ag -u"
+
+# Stupid npm
+alias funpm="rm -rf node_modules/ && npm cache clean && npm install"
