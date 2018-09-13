@@ -393,6 +393,11 @@ layers configuration. You are free to put any user code."
 
   ;; Git repo directory for magit auto-complete
   (setq-default magit-repository-directories '("~/Projects/anth/" "~/Projects/TTM/"))
+
+  ;; Disable saving recent files list because it causes warnings whenever switching networks
+  ;; https://github.com/syl20bnr/spacemacs/issues/5186#issuecomment-399220611
+  (defun nullify-recentf-save-list (orig-fun &rest args) t)
+  (advice-add 'recentf-save-list :around #'nullify-recentf-save-list)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
