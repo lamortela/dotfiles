@@ -74,3 +74,7 @@ alias ag="ag -u"
 
 # Stupid npm
 alias funpm="rm -rf node_modules/ && npm cache clean && npm install"
+
+# Tmux
+alias tls="tmux ls"
+alias tk="tmux kill-server"
