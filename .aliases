@@ -18,7 +18,9 @@ alias dot="cd ~/Projects/anth/dotfiles"
 alias itc="cd ~/Projects/itc"
 
 # File management
-alias la="ls -alF"
+alias la="ls -alhFGT"       # ls all, long format, human-readable size, type identifiers, colorized, complete time
+alias lass="ls -alhrFGTS"   # la sorted by increasing size
+alias lats="ls -alhtrFGT"     # la sorted by increasing time modified
 alias cat="cat -n"
 
 # Show/hide hidden files in Finder
