@@ -78,3 +78,7 @@ alias funpm="rm -rf node_modules/ && npm cache clean && npm install"
 # Tmux
 alias tls="tmux ls"
 alias tk="tmux kill-server"
+
+# Disk Usage
+alias hdu1="du -hd1"
+alias hdf="df -ah"
