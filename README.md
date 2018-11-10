@@ -2,20 +2,38 @@
 
 ## Usage
 
-* Clone repo to your local
-* Review files and customize as you see fit, delete any files you don't need or don't want.
-* Run `bash bootstrap.sh` to copy everything in the repo to your `$HOME` directory
-* Run `bash brew.sh` to install Homebrew and install homebrew packages.
-* If you install the homebrew version of bash, change your shell to the bash version.
-  * `sudo -s`
-  * `echo /usr/local/bin/bash >> /etc/shells`
-  * `chsh -s /usr/local/bin/bash
-  * `exec "$SHELL"` or restart your terminal
-
+- Clone repo to your local.
+- Review files and customize as you see fit, delete any files you don't need or don't want.
+- Install Homebrew.
+  - `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+- Install basic set of homebrew packages.
+  - `brew install bash bash-completion@2 git hub vim tmux`
+- Complete instructions listed in Caveats of homebrew install.
+- Change shell to the bash version installed by homebrew.
+  - `sudo -s`
+  - `echo /usr/local/bin/bash >> /etc/shells`
+  - `chsh -s /usr/local/bin/bash`
+  - `exec "$SHELL"` or restart your terminal
+- Run `bash bootstrap.sh` to copy everything in the repo to your `$HOME` directory.
+- (Optional) Install spacemacs
+  - `brew tap d12frosted/emacs-plus`
+  - `brew install emacs-plus`
+  - `ln -s /usr/local/Cellar/emacs-plus/*/Emacs.app/ /Applications/`
+- (Optional) Install language/tool specific packages
+  - `brew install nvm python postgresql elixir`
+  - [Install RVM](https://rvm.io/rvm/install)
+  - Install desired node versions using `nvm`
+  - Install desired ruby versions using `rvm`
+- (Optional) Install tmuxinator
+  - `gem install tmuxinator`
+- (Optional) Install other useful stuff
+  - `brew install jq awscli tree the_silver_searcher reattach-to-user-namespace`
 
 ## TODO
-* Automate change shell step
-* Add `ignore` file where the files that you don't want to use can be added, and `bootstrap.sh` will
+- Automate change shell step
+- Add `ignore` file where the files that you don't want to use can be added, and `bootstrap.sh` will
 not copy those files to your `$HOME` directory.
-* Maybe change setup so that `bootstrap.sh` just sets up the `$HOME` directory to point at this
+- Maybe change setup so that `bootstrap.sh` just sets up the `$HOME` directory to point at this
 repo's directory. For instance, copying a `.bash_profile` that points at the `.bashrc` in here.
+- Document python dev environment setup with pyenv, virtualenv, and virtualenvwrapper
+- Document `.secrets` setup/usage.

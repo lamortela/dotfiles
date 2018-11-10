@@ -23,6 +23,7 @@ shopt -s cdspell;
 # Case-insensitive globbing
 shopt -s nocaseglob;
 
+# TODO: THIS MAY NOT BE NECESSARY ANYMORE
 # Need this so SSH passphrase isn't constantly asked for in tmux sessions
 # because Sierra sucks
 ssh-add -A 2>/dev/null;
