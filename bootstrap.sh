@@ -5,13 +5,13 @@ cd "$(dirname "${BASH_SOURCE}")";
 doIt() {
   rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
         --exclude "README.md" --exclude "LICENSE.md" --exclude "sublime/" \
-	      -avh --no-perms . ~;
+        --exclude "brew.sh" -avh --no-perms . ~;
 }
 
 pretendToDoIt() {
   rsync --dry-run --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
         --exclude "README.md" --exclude "LICENSE.md" --exclude "sublime/" \
-	      -avh --no-perms . ~;
+        --exclude "brew.sh" -avh --no-perms . ~;
 }
 
 if [ "$1" == "--dry-run" ]; then
