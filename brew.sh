@@ -1,28 +1,33 @@
 #!/usr/bin/env bash
 
-brew update
+# Install Homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
 
-brew upgrade --all
 
-brew install brew-cask
+# Install packages
+brew update;
 
-brew install bash
-brew install bash-completion
+brew upgrade --all;
 
-brew install git
-brew install hub
+brew install brew-cask;
 
-brew install vim
-brew install tmux
-brew install tree
+brew install bash;
+brew install bash-completion;
 
-brew install python
-brew install postgresql
-# brew install sqlite
-brew install nvm
+brew install git;
+brew install hub;
 
-# brew install ctags
-# brew install qt
+brew install vim;
+brew install tmux;
+brew install tree;
 
-brew cleanup
+brew install python;
+brew install postgresql;
+# brew install sqlite;
+brew install nvm;
+
+# brew install ctags;
+# brew install qt;
+
+brew cleanup;
 
