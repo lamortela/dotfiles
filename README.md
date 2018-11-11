@@ -18,7 +18,8 @@
 - (Optional) Install spacemacs
   - `brew tap d12frosted/emacs-plus`
   - `brew install emacs-plus`
-  - `ln -s /usr/local/Cellar/emacs-plus/*/Emacs.app/ /Applications/`
+  - `ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/`
+  - `git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d`
 - (Optional) Install language/tool specific packages
   - `brew install nvm python postgresql elixir`
   - [Install RVM](https://rvm.io/rvm/install)
