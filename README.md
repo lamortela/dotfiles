@@ -3,7 +3,7 @@
 ## Usage
 
 - Clone repo to your local.
-- Review files and customize as you see fit, delete any files you don't need or don't want.
+- Review files and customize as you see fit, add any files you don't need or don't want to the `excludes.txt.` file.
 - Install Homebrew.
   - `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 - Install basic set of homebrew packages.
@@ -32,8 +32,6 @@
 
 ## TODO
 - Automate change shell step
-- Add `ignore` file where the files that you don't want to use can be added, and `bootstrap.sh` will
-not copy those files to your `$HOME` directory.
 - Maybe change setup so that `bootstrap.sh` just sets up the `$HOME` directory to point at this
 repo's directory. For instance, copying a `.bash_profile` that points at the `.bashrc` in here.
 - Document python dev environment setup with pyenv, virtualenv, and virtualenvwrapper

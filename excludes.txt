@@ -1,0 +1,6 @@
+excludes.txt
+.git/
+.DS_Store
+bootstrap.sh
+*.md
+sublime/
