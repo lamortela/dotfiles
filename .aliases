@@ -10,12 +10,7 @@ alias -- -="cd -"
 alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/Projects"
-alias anth="cd ~/Projects/anth"
-alias dot="cd ~/Projects/anth/dotfiles"
-
-# ITC specific navigation
-alias itc="cd ~/Projects/itc"
+alias anth="cd ~/code/anthlam"
 
 # File management
 alias la="ls -alhFGT"       # ls all, long format, human-readable size, type identifiers, colorized, complete time
