@@ -22,7 +22,8 @@
   - `ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/`
   - `git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d`
 - (Optional) Install language/tool specific packages
-  - `brew install nvm python postgresql elixir`
+  - `brew install python postgresql elixir`
+  - [Install NVM](https://github.com/creationix/nvm#installation)
   - [Install RVM](https://rvm.io/rvm/install)
   - Install desired node versions using `nvm`
   - Install desired ruby versions using `rvm`
