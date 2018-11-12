@@ -29,7 +29,11 @@ shopt -s nocaseglob;
 ssh-add -A 2>/dev/null;
 
 # For nvm installed via homebrew
-source $(brew --prefix nvm)/nvm.sh;
+# source $(brew --prefix nvm)/nvm.sh;
+
+# For nvm installed via creationix install.sh
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Initialize pyenv when a new shell is opened
 if command -v pyenv 1>/dev/null 2>&1; then
