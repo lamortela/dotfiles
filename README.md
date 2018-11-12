@@ -12,6 +12,7 @@
 - Change shell to the bash version installed by homebrew.
   - `sudo -s`
   - `echo /usr/local/bin/bash >> /etc/shells`
+  - `exit`
   - `chsh -s /usr/local/bin/bash`
   - `exec "$SHELL"` or restart your terminal
 - Run `bash bootstrap.sh` to copy everything in the repo to your `$HOME` directory.
