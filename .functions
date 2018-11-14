@@ -36,6 +36,11 @@ ta() {
   tmux a -t $@
 }
 
+# New tmux session
+tn() {
+  tmux new -s $@
+}
+
 # open buffer output in vim
 v() {
   $@ | vim -R -
