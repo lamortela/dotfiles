@@ -12,7 +12,7 @@ if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
 fi
 
 # For bash completion
-source ~/.bin/.tmuxinator.bash;
+# source ~/.bin/.tmuxinator.bash;
 
 # Append to bash history instead of overwriting
 shopt -s histappend;
