@@ -4,3 +4,4 @@ excludes.txt
 bootstrap.sh
 *.md
 sublime/
+iterm-profile.json
