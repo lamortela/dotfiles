@@ -62,3 +62,8 @@ v() {
 weather() {
   curl -s http://wttr.in/$1
 }
+
+# encrypted zip
+ezip() {
+  zip -er $1 $2
+}
