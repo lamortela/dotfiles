@@ -5,3 +5,6 @@ bootstrap.sh
 *.md
 sublime/
 iterm-profile.json
+.bin/
+.tmuxinator/
+stellar.yaml
