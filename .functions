@@ -49,7 +49,8 @@ ta() {
 
 # New tmux session
 tn() {
-  tmux new -s $@
+  [[ -z "$2" ]] && WORKING_DIR=~ || WORKING_DIR=$2
+  tmux new -s $1 -c $WORKING_DIR
 }
 
 # open buffer output in vim
