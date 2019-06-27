@@ -28,6 +28,7 @@ alias unmute="osascript -e 'set volume 3'"
 alias emptytrash="rm -rfv ~/.Trash"
 
 # git shortcuts
+alias ga="git config --get-regexp alias"  # list git aliases
 alias gbr="git br"           # branch
 alias gci="git ci"           # commit
 alias gcl="git cl"           # clone
@@ -67,7 +68,7 @@ alias actags="rm tags; ctags --exclude=.git --exclude=vendor --exclude=node_modu
 alias sop="source ~/.bash_profile; rvm reload"
 
 # Better silver searcher default
-alias ag="ag -u"
+alias ag="ag --hidden --path-to-ignore ~/.ignore"
 
 # Stupid npm
 alias funpm="rm -rf node_modules/ && npm cache clean && npm install"
