@@ -29,7 +29,7 @@ filetype plugin indent on
 syntax enable
 
 " appearance
-colorscheme molokai
+colors zenburn
 set visualbell
 
 " for vim-airline
