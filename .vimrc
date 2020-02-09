@@ -5,25 +5,20 @@ set encoding=utf-8
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'kien/ctrlp.vim'
-"Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-surround'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'pangloss/vim-javascript'
-"Plugin 'vim-ruby/vim-ruby'
-"Plugin 'tpope/vim-rails'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'ervandew/supertab'
+Plug 'gmarik/Vundle.vim'
+Plug 'tpope/vim-fugitive'              | "git wrapper"
+Plug 'vim-airline/vim-airline'         | "status/tabline"
+Plug 'vim-airline/vim-airline-themes'  | "vim-airline themes"
+Plug 'ctrlpvim/ctrlp.vim'              | "fuzzy finder"
+Plug 'dense-analysis/ale'              | "syntax checker"
+Plug 'tpope/vim-surround'              | "parenthesizing"
+Plug 'airblade/vim-gitgutter'          | "git diff in gutter"
+Plug 'pangloss/vim-javascript'         | "JS indentation and syntax"
+Plug 'bronson/vim-trailing-whitespace' | "highlights trailing whitespace"
 
-call vundle#end()
+call plug#end()
 
 filetype plugin indent on
 syntax enable
@@ -120,7 +115,7 @@ endif
 " my keymap (the pipe is not part of the command, it just enables inline comments)
 inoremap fd <Esc>|                                  "exit insert mode
 nnoremap ss :w<CR>|                                 "save file from normal mode
-nnoremap <C-j>s :%!python -m json.tool|             "pretty print json"
+nnoremap <leader>js :%!python -m json.tool<CR>|     "pretty print json"
 nnoremap <C-h> <C-w>h|                              "switch split left
 nnoremap <C-j> <C-w>j|                              "switch split down
 nnoremap <C-k> <C-w>k|                              "switch split up
