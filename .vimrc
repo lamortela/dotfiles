@@ -1,9 +1,6 @@
 let mapleader = "\<Space>"
 set encoding=utf-8
-
-" for Vundle
-set nocompatible
-filetype off
+let g:ale_completion_enabled = 1
 
 call plug#begin('~/.vim/plugged')
 
@@ -17,6 +14,7 @@ Plug 'tpope/vim-surround'              | "parenthesizing"
 Plug 'airblade/vim-gitgutter'          | "git diff in gutter"
 Plug 'pangloss/vim-javascript'         | "JS indentation and syntax"
 Plug 'bronson/vim-trailing-whitespace' | "highlights trailing whitespace"
+Plug 'leafgarland/typescript-vim'      | "typescript syntax highlighting"
 
 call plug#end()
 
@@ -111,6 +109,19 @@ if executable('ag')
   nnoremap \ :Ag<SPACE>
 endif
 
+"for ALE
+let g:ale_lint_on_save = 1
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'typescript': ['eslint']
+\}
+let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier', 'eslint'],
+\   'typescript': ['prettier', 'eslint']
+\}
 
 " my keymap (the pipe is not part of the command, it just enables inline comments)
 inoremap fd <Esc>|                                  "exit insert mode
@@ -128,4 +139,3 @@ nnoremap <C-c> :bnext\|bdelete #<CR>|               "delete buffer without delet
 "ctags go to definition
 "ctags go back
 "nav buffers in single pane
-
