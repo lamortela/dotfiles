@@ -50,6 +50,9 @@ alias gdmb="git dmb"         # branch --merged | egrep -v "(^\*|master|staging|p
 
 # Editors
 alias space="open /Applications/Emacs.app"
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
 
 # process killing/grepping
 alias pk="pkill -9 \!^"
