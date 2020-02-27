@@ -31,13 +31,11 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     typescript
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     helm
      auto-completion
      ;; better-defaults
      csv
@@ -47,6 +45,7 @@ values."
      emacs-lisp
      git
      github
+     helm
      html
      javascript
      (markdown :variables markdown-live-preview-engine 'vmd)
@@ -66,6 +65,9 @@ values."
      themes-megapack
      (version-control :variables
                       version-control-global-margin t)
+     (typescript :variables
+                 typescript-fmt-on-save t
+                 typescript-fmt-tool 'typescript-formatter)
      yaml
      )
    ;; List of additional packages that will be installed without being
@@ -157,7 +159,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 12
+                               :size 13
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
