@@ -4,7 +4,7 @@ excludes.txt
 bootstrap.sh
 *.md
 sublime/
-iterm-profile.json
+Anth-iterm-profile.json
 .bin/
 .tmuxinator/
 stellar.yaml
