@@ -65,5 +65,5 @@ weather() {
 
 # encrypted zip
 ezip() {
-  zip -er $1 $2
+  zip -er $1 $2 -x *.DS_Store
 }
