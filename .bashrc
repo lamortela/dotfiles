@@ -8,6 +8,7 @@ unset file;
 
 # Enable Homebrew bash completion
 if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
+  export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
   . $(brew --prefix)/share/bash-completion/bash_completion
 fi
 
