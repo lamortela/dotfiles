@@ -2,7 +2,7 @@
 
 # Load all the shell dotfiles
 for file in ~/.{path,bash_prompt,exports,aliases,functions,secrets}; do
-  [ -r "$file" ] && source "$file"
+  [ -r "$file" ] && . "$file"
 done;
 unset file;
 
@@ -13,7 +13,7 @@ if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
 fi
 
 # For bash completion
-# source ~/.bin/.tmuxinator.bash;
+# . ~/.bin/.tmuxinator.bash;
 
 # Append to bash history instead of overwriting
 shopt -s histappend;
@@ -30,7 +30,7 @@ shopt -s nocaseglob;
 ssh-add -A 2>/dev/null;
 
 # For nvm installed via homebrew
-# source $(brew --prefix nvm)/nvm.sh;
+# . $(brew --prefix nvm)/nvm.sh;
 
 # For nvm installed via creationix install.sh
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -54,5 +54,5 @@ fi
 # Load RVM into a shell session *as a function*
 # This must be at the end of the file to avoid a warning when
 # running the rvm command
-[[ -r "$HOME/.rvm/scripts/completion" ]] && source "$HOME/.rvm/scripts/completion"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -r "$HOME/.rvm/scripts/completion" ]] && \. "$HOME/.rvm/scripts/completion"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && \. "$HOME/.rvm/scripts/rvm"

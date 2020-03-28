@@ -68,7 +68,7 @@ alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 alias actags="rm tags; ctags --exclude=.git --exclude=vendor --exclude=node_modules --exclude=coverage --exclude=public -R .;"
 
 # Reloading profile
-alias sop="source ~/.bash_profile; rvm reload"
+alias sop=". ~/.bash_profile; rvm reload"
 
 # Better silver searcher default
 alias ag="ag --hidden --path-to-ignore ~/.ignore"
