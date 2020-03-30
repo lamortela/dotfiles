@@ -24,10 +24,10 @@ HISTCONTROL=ignoredups:erasedups;
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND";
 
 # virtualenvwrapper environments home
-WORKON_HOME=$HOME/.virtualenvs;
+# WORKON_HOME=$HOME/.virtualenvs;
 
 # make virtualenvwrapper to use pyenv when creating Python environments
-PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true";
+# PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true";
 
 # aws-vault config
 export AWS_VAULT_BACKEND=file;

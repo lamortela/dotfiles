@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 # Source .bashrc if it exists
-[[ -r ~/.bashrc ]] && . ~/.bashrc
+[[ -r ~/.bashrc ]] && source ~/.bashrc
