@@ -126,7 +126,7 @@ let g:ale_fixers = {
 
 " my keymap (the pipe is not part of the command, it just enables inline comments)
 inoremap fd <Esc>|                                  "exit insert mode
-nnoremap ss :w<CR>|                                 "save file from normal mode
+nnoremap fs :w<CR>|                                 "save file from normal mode
 nnoremap <leader>js :%!python -m json.tool<CR>|     "pretty print json"
 nnoremap <C-h> <C-w>h|                              "switch split left
 nnoremap <C-j> <C-w>j|                              "switch split down
