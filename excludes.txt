@@ -8,3 +8,4 @@ Anth-iterm-profile.json
 .bin/
 .tmuxinator/
 stellar.yaml
+iterm/
