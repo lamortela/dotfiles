@@ -406,6 +406,11 @@ layers configuration. You are free to put any user code."
   ;; Quick buffer save
   (key-chord-define evil-normal-state-map "ss" 'save-buffer)
 
+  ;; Zoom In/Out/Reset
+  (global-set-key (kbd "C-=") 'spacemacs/zoom-frm-in)
+  (global-set-key (kbd "C--") 'spacemacs/zoom-frm-out)
+  (global-set-key (kbd "C-0") 'spacemacs/zoom-frm-unzoom)
+
   ;; Open links in org mode.  For instance, hyperlinks in documentation.
   (evil-leader/set-key-for-mode 'org-mode "ol" 'org-open-at-point)
 
