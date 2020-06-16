@@ -46,7 +46,7 @@ alias grs="git rs"           # reset --soft HEAD^
 alias gs="git s"             # status -s
 alias gst="git st"           # status
 alias gpo="git po"           # pull --no-edit origin
-alias gdmb="git dmb"         # branch --merged | egrep -v "(^\*|master|staging|production)" | xargs git branch -d
+alias gdmb="git checkout master && git remote prune origin | sed 's/^.*origin\///g' | xargs -L1 -J % git branch -D %"         # Delete branches that have been deleted on the remote repository (works with squash&merge repos)
 
 # Editors
 alias space="open /Applications/Emacs.app"

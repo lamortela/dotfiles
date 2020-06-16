@@ -56,9 +56,6 @@
   # Ctags
 	ctags = !.git/hooks/ctags
 
-	# Delete merged branches (exclude master, staging, and production)
-	dmb = !git branch --merged | egrep -v \"(^\\*|master|staging|production)\" | xargs git branch -d
-
 [init]
 	templatedir = ~/.git_template
 
