@@ -67,6 +67,8 @@ values."
                 terraform-auto-format-on-save t)
      themes-megapack
      (version-control :variables
+                      version-control-diff-tool 'diff-hl
+                      version-control-diff-side 'left
                       version-control-global-margin t)
      (typescript :variables
                  typescript-fmt-on-save t
@@ -431,6 +433,10 @@ layers configuration. You are free to put any user code."
   ;; https://github.com/syl20bnr/spacemacs/issues/5186#issuecomment-399220611
   (defun nullify-recentf-save-list (orig-fun &rest args) t)
   (advice-add 'recentf-save-list :around #'nullify-recentf-save-list)
+
+  ;; Git gutter
+  (diff-hl-flydiff-mode)
+  (set-fringe-style '(7 . 0))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
