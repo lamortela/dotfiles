@@ -258,7 +258,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -409,7 +409,7 @@ layers configuration. You are free to put any user code."
   (setq-default groovy-indent-offset 2)
 
   ;; Quick buffer save
-  (key-chord-define evil-normal-state-map "ss" 'save-buffer)
+  (key-chord-define evil-normal-state-map "sa" 'save-buffer)
 
   ;; Zoom In/Out/Reset
   (global-set-key (kbd "C-=") 'spacemacs/zoom-frm-in)
@@ -422,6 +422,7 @@ layers configuration. You are free to put any user code."
   ;; Git repo directory for magit auto-complete
   (setq-default magit-repository-directories '("~/code/anthlam/" "~/code/auth0/"))
 
+  ;; DOES NOT WORK
   ;; Make underscore count as a word character
   (defadvice evil-inner-word (around underscore-as-word activate)
     (let ((table (copy-syntax-table (syntax-table))))
