@@ -250,8 +250,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-colorize-cursor-according-to-state t
 
    ;; Default font or prioritized list of fonts.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font '("Meslo LG M for Powerline"
+                               :size 14
                                :weight normal
                                :width normal)
 
@@ -542,6 +542,9 @@ before packages are loaded."
 
   ;; (golden-ratio-mode)
   (key-chord-mode 1)
+
+  ;; Change powerline separator
+  (setq powerline-default-separator 'arrow-fade)
 
   ;; So linting knows what module means
   (setq js2-include-node-externs t)
