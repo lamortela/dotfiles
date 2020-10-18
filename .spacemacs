@@ -553,20 +553,13 @@ before packages are loaded."
   (add-hook 'js2-mode-hook 'prettier-js-mode)
   (add-hook 'web-mode-hook 'prettier-js-mode)
 
-  ;; Change fill column from 80 to 100
-  (setq-default fill-column 80)
+  ;; Fill column indicator
   (add-hook 'prog-mode-hook
             (lambda ()
-              (fci-mode t)
-              (setq fill-column 95)))
-  (add-hook 'python-mode-hook
+              (fci-mode t)))
+  (add-hook 'git-commit-mode-hook
             (lambda ()
-              (fci-mode t)
-              (setq python-fill-column 95)))
-  (add-hook 'markdown-mode-hook
-            (lambda ()
-              (fci-mode t)
-              (setq fill-column 95)))
+              (setq fill-column 70)))
 
   ;; Increase key-chord delays
   (setq-default key-chord-two-keys-delay 0.2
