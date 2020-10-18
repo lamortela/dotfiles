@@ -607,13 +607,9 @@ before packages are loaded."
   ;; Git repo directory for magit auto-complete
   (setq-default magit-repository-directories '("~/code/anthlam/" "~/code/auth0/"))
 
-  ;; DOES NOT WORK
   ;; Make underscore count as a word character
-  (defadvice evil-inner-word (around underscore-as-word activate)
-    (let ((table (copy-syntax-table (syntax-table))))
-      (modify-syntax-entry ?_ "w" table)
-      (with-syntax-table table
-        ad-do-it)))
+  (dolist (mode-hook '(js-mode-hook js2-mode-hook typescript-mode-hook))
+    (add-hook mode-hook #'(lambda () (modify-syntax-entry ?_ "w"))))
 
   ;; Disable saving recent files list because it causes warnings whenever switching networks
   ;; https://github.com/syl20bnr/spacemacs/issues/5186#issuecomment-399220611
