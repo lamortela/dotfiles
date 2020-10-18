@@ -66,7 +66,7 @@ This function should only modify configuration layer settings."
      (shell :variables
             shell-default-shell 'ansi-term
             shell-default-term-shell "/bin/bash"
-            shell-default-position 'top)
+            shell-default-position 'bottom)
      spell-checking
      sql
      syntax-checking
@@ -234,8 +234,7 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(zenburn
-                         anti-zenburn)
+   dotspacemacs-themes '(zenburn)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
@@ -474,7 +473,7 @@ It should only modify the values of Spacemacs settings."
    ;; `trailing' to delete only the whitespace at end of lines, `changed' to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup 'trailing
+   dotspacemacs-whitespace-cleanup 'changed
 
    ;; If non nil activate `clean-aindent-mode' which tries to correct
    ;; virtual indentation of simple modes. This can interfer with mode specific
@@ -572,9 +571,6 @@ before packages are loaded."
 
   ;; Turn off line wrap
   (setq-default truncate-lines t)
-
-  ;; Change powerline separator
-  (setq-default powerline-default-separator 'alternate)
 
   ;; Generic tabs
   (setq-default indent-tabs-mode nil
