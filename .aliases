@@ -49,7 +49,7 @@ alias gpo="git po"           # pull --no-edit origin
 alias gdmb="git remote prune origin | grep '] origin/' | sed 's/^.*origin\///g' | xargs -L1 -J % git branch -D %"         # Delete branches that have been deleted on the remote repository (works with squash&merge repos)
 
 # Editors
-alias space="emacs &"
+alias space="open -a emacs"
 alias updatespacemacs="cd ~/.emacs.d && git pull --rebase && cd -"
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
