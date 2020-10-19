@@ -250,7 +250,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-colorize-cursor-according-to-state t
 
    ;; Default font or prioritized list of fonts.
-   dotspacemacs-default-font '("Meslo LG M for Powerline"
+   dotspacemacs-default-font '("Fira Code"
                                :size 14
                                :weight normal
                                :width normal)
@@ -619,6 +619,9 @@ before packages are loaded."
   ;; Git gutter
   (diff-hl-flydiff-mode)
   (set-fringe-style '(7 . 0))
+
+  ;; Enable Fira Code ligatures
+  (mac-auto-operator-composition-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
