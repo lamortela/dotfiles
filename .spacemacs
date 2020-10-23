@@ -63,10 +63,7 @@ This function should only modify configuration layer settings."
      ;; react
      ;; ruby
      ;; ruby-on-rails
-     (shell :variables
-            shell-default-shell 'ansi-term
-            shell-default-term-shell "/bin/bash"
-            shell-default-position 'bottom)
+     shell
      spell-checking
      sql
      syntax-checking
