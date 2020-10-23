@@ -53,12 +53,21 @@ This function should only modify configuration layer settings."
      github
      helm
      html
-     javascript
+     (javascript :variables
+                 js2-mode-show-strict-warnings nil
+                 javascript-fmt-tool 'prettier
+                 javascript-fmt-on-save t
+                 js2-basic-offset 2
+                 js-indent-level 2
+                 javascript-backend 'lsp
+                 javascript-repl 'node-js)
      ;; lsp
-     (markdown :variables markdown-live-preview-engine 'vmd)
+     (markdown :variables
+               markdown-live-preview-engine 'vmd)
      multiple-cursors
      ;; org
      osx
+     prettier
      ;; python
      ;; react
      ;; ruby
@@ -90,9 +99,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages '(
                                       key-chord
                                       osx-clipboard
-                                      groovy-mode
-                                      prettier-js
-                                      )
+                                      groovy-mode)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -546,10 +553,6 @@ before packages are loaded."
   ;; So linting knows what module means
   (setq js2-include-node-externs t)
 
-  ;; Run prettier on save
-  (add-hook 'js2-mode-hook 'prettier-js-mode)
-  (add-hook 'web-mode-hook 'prettier-js-mode)
-
   ;; Fill column indicator
   (add-hook 'prog-mode-hook
             (lambda ()
@@ -579,10 +582,8 @@ before packages are loaded."
                 web-mode-code-indent-offset 2
                 web-mode-attr-indent-offset 2)
 
-  ;; Javascript tabs
-  (setq-default js2-basic-offset 2
-                js-indent-level 2
-                css-indent-offset 2)
+  ;; CSS tabs
+  (setq-default css-indent-offset 2)
 
   ;; Typescript tabs
   (setq-default typescript-indent-level 2)
