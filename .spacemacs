@@ -546,55 +546,38 @@ before packages are loaded."
 
   ;; (golden-ratio-mode)
   (key-chord-mode 1)
+  ;; (global-company-mode)
 
-  ;; Change powerline separator
+  ;; change powerline separator
   (setq powerline-default-separator 'arrow-fade)
 
-  ;; So linting knows what module means
-  (setq js2-include-node-externs t)
+  ;; set fill-column width for git commit buffer to recommended width
+  (add-hook 'git-commit-mode-hook (lambda () (setq fill-column 70)))
 
-  ;; Fill column indicator
-  (add-hook 'prog-mode-hook
-            (lambda ()
-              (fci-mode t)))
-  (add-hook 'git-commit-mode-hook
-            (lambda ()
-              (setq fill-column 70)))
-
-  ;; Increase key-chord delays
+  ;; increase key-chord delays
   (setq-default key-chord-two-keys-delay 0.2
                 key-chord-one-key-delay 0.3)
 
-  ;; Turn off line wrap
+  ;; turn off line wrap
   (setq-default truncate-lines t)
 
-  ;; Generic tabs
+  ;; use 2 spaces for tabs
   (setq-default indent-tabs-mode nil
-                tab-width 2)
-
-  ;; Bash script tabs
-  (setq-default sh-basic-offset 2
-                sh-indentation 2)
-
-  ;; HTML tabs
-  (setq-default web-mode-markup-indent-offset 2
+                tab-width 2
+                sh-basic-offset 2
+                sh-indentation 2
+                web-mode-markup-indent-offset 2
                 web-mode-css-indent-offset 2
                 web-mode-code-indent-offset 2
-                web-mode-attr-indent-offset 2)
+                web-mode-attr-indent-offset 2
+                css-indent-offset 2
+                typescript-indent-level 2
+                groovy-indent-offset 2)
 
-  ;; CSS tabs
-  (setq-default css-indent-offset 2)
-
-  ;; Typescript tabs
-  (setq-default typescript-indent-level 2)
-
-  ;; Groovy tabs
-  (setq-default groovy-indent-offset 2)
-
-  ;; Quick buffer save
+  ;; map buffer save to "sa" key chord
   (key-chord-define evil-normal-state-map "sa" 'save-buffer)
 
-  ;; Zoom In/Out/Reset
+  ;; zoom in/out/reset
   (global-set-key (kbd "C-=") 'spacemacs/zoom-frm-in)
   (global-set-key (kbd "C--") 'spacemacs/zoom-frm-out)
   (global-set-key (kbd "C-0") 'spacemacs/zoom-frm-unzoom)
@@ -606,7 +589,7 @@ before packages are loaded."
   (setq-default magit-repository-directories '("~/code/anthlam/" "~/code/auth0/"))
 
   ;; Make underscore count as a word character
-  (dolist (mode-hook '(js-mode-hook js2-mode-hook typescript-mode-hook))
+  (dolist (mode-hook '(js-mode-hook js2-mode-hook typescript-mode-hook groovy-mode-hook))
     (add-hook mode-hook #'(lambda () (modify-syntax-entry ?_ "w"))))
 
   ;; Disable saving recent files list because it causes warnings whenever switching networks
