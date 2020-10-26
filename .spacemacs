@@ -45,7 +45,9 @@ This function should only modify configuration layer settings."
                       auto-completion-minimum-prefix-length 1
                       auto-completion-use-company-box t)
      csv
-     docker
+     (docker :variables
+             docker-dockerfile-backend 'lsp)
+
      emacs-lisp
      git
      github
@@ -544,9 +546,8 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
-  ;; (golden-ratio-mode)
+  ;; turn on key-chord mode
   (key-chord-mode 1)
-  ;; (global-company-mode)
 
   ;; change powerline separator
   (setq powerline-default-separator 'arrow-fade)
@@ -586,7 +587,7 @@ before packages are loaded."
   (evil-leader/set-key-for-mode 'org-mode "ol" 'org-open-at-point)
 
   ;; Git repo directory for magit auto-complete
-  (setq-default magit-repository-directories '("~/code/anthlam/" "~/code/auth0/"))
+  (setq magit-repository-directories '(("~/code" . 2)))
 
   ;; Make underscore count as a word character
   (dolist (mode-hook '(js-mode-hook js2-mode-hook typescript-mode-hook groovy-mode-hook))
