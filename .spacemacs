@@ -40,38 +40,35 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      (auto-completion :variables
                       auto-completion-return-key-behavior nil
-                      auto-completion-complete-with-key-sequence "jk"
-                      auto-completion-enable-help-tooltip t)
-     ;; better-defaults
+                      auto-completion-tab-key-behavior 'complete
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-minimum-prefix-length 1
+                      auto-completion-use-company-box t)
      csv
-     ;; django
      docker
-     ;; elixir
-     ;; elm
      emacs-lisp
      git
      github
      helm
      html
      (javascript :variables
-                 js2-mode-show-strict-warnings nil
                  javascript-fmt-tool 'prettier
                  javascript-fmt-on-save t
-                 js2-basic-offset 2
-                 js-indent-level 2
                  javascript-backend 'lsp
-                 javascript-repl 'node-js)
+                 javascript-lsp-linter nil
+                 javascript-repl 'node-js
+                 js-indent-level 2
+                 js2-mode-show-strict-warnings nil
+                 js2-mode-show-parse-errors nil
+                 js2-basic-offset 2
+                 js2-include-node-externs t)
      ;; lsp
      (markdown :variables
                markdown-live-preview-engine 'vmd)
      multiple-cursors
-     ;; org
+     org
      osx
      prettier
-     ;; python
-     ;; react
-     ;; ruby
-     ;; ruby-on-rails
      shell
      spell-checking
      sql
@@ -85,7 +82,10 @@ This function should only modify configuration layer settings."
                       version-control-global-margin t)
      (typescript :variables
                  typescript-fmt-on-save t
-                 typescript-fmt-tool 'typescript-formatter)
+                 typescript-fmt-tool 'prettier
+                 typescript-linter 'eslint
+                 typescript-backend 'lsp
+                 typescript-lsp-linter nil)
      treemacs
      yaml
      )
