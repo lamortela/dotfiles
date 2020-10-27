@@ -17,6 +17,9 @@ alias la="ls -alhFGT"       # ls all, long format, human-readable size, type ide
 alias lass="ls -alhrFGTS"   # la sorted by increasing size
 alias lats="ls -alhtrFGT"     # la sorted by increasing time modified
 alias cat="cat -n"
+alias mv="mv -iv"
+alias cp="cp -Riv"
+alias mkdir="mkdir -vp"
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
