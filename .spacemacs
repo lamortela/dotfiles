@@ -68,12 +68,22 @@ This function should only modify configuration layer settings."
      (markdown :variables
                markdown-live-preview-engine 'vmd)
      multiple-cursors
-     org
-     osx
+     (org :variables
+          org-enable-github-support t
+          org-enable-org-journal-support t
+          org-journal-dir "~/code/anthlam/til/"
+          org-journal-file-format "%Y-%m-%d"
+          org-journal-date-prefix "#+TITLE: "
+          org-journal-date-format "%A, %B %d %Y"
+          org-journal-time-prefix "* "
+          org-journal-time-format "")
+     (osx :variables
+          osx-right-command-as 'meta)
      prettier
      shell
      spell-checking
-     sql
+     (sql :variables
+          sql-capitalize-keywords t)
      syntax-checking
      (terraform :variables
                 terraform-auto-format-on-save t)
@@ -89,7 +99,8 @@ This function should only modify configuration layer settings."
                  typescript-backend 'lsp
                  typescript-lsp-linter nil)
      treemacs
-     yaml
+     (yaml :variables
+           yaml-enable-lsp t)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
