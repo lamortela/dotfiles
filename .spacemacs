@@ -73,9 +73,7 @@ This function should only modify configuration layer settings."
           org-journal-dir "~/code/anthlam/til/"
           org-journal-file-format "%Y-%m-%d"
           org-journal-date-prefix "#+TITLE: "
-          org-journal-date-format "%A, %B %d %Y"
-          org-journal-time-prefix "* "
-          org-journal-time-format "")
+          org-journal-date-format "%A, %B %d %Y")
      (osx :variables
           osx-right-command-as 'meta)
      prettier
