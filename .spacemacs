@@ -57,14 +57,13 @@ This function should only modify configuration layer settings."
                  javascript-fmt-tool 'prettier
                  javascript-fmt-on-save t
                  javascript-backend 'lsp
-                 javascript-lsp-linter nil
+                 js2-include-node-externs t
                  javascript-repl 'node-js
                  js-indent-level 2
                  js2-mode-show-strict-warnings nil
                  js2-mode-show-parse-errors nil
-                 js2-basic-offset 2
-                 js2-include-node-externs t)
-     ;; lsp
+                 js2-basic-offset 2)
+     lsp
      (markdown :variables
                markdown-live-preview-engine 'vmd)
      multiple-cursors
@@ -96,8 +95,7 @@ This function should only modify configuration layer settings."
                  typescript-fmt-on-save t
                  typescript-fmt-tool 'prettier
                  typescript-linter 'eslint
-                 typescript-backend 'lsp
-                 typescript-lsp-linter nil)
+                 typescript-backend 'lsp)
      treemacs
      (yaml :variables
            yaml-enable-lsp t)
@@ -371,7 +369,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup t
+   dotspacemacs-maximized-at-startup nil
 
    ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
    ;; variable with `dotspacemacs-maximized-at-startup' in OSX to obtain
