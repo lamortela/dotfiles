@@ -1,0 +1,51 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "mongodb/brew"
+
+# terminal
+brew "bash"
+brew "bash-completion@2"
+brew "coreutils"
+brew "tmux"
+brew "reattach-to-user-namespace"
+brew "git"
+brew "hub"
+brew "bat"
+
+# editor
+brew "vim"
+brew "neovim"
+brew "ctags"
+brew "railwaycat/emacsmacport/emacs-mac", args: ["with-natural-title-bar", "with-spacemacs-icon"]
+brew "yamllint"
+
+# search
+brew "ripgrep"
+brew "the_silver_searcher"
+
+# productivity
+brew "mas"
+brew "task"
+
+# programming tools
+brew "hashicorp/tap/terraform"
+brew "mongodb/brew/mongodb-community"
+brew "jq"
+brew "groovy"
+
+# desktop apps
+cask "1password"
+cask "1password-cli"
+cask "alfred"
+cask "emacs-mac-spacemacs-icon"
+cask "firefox"
+cask "font-fira-code"
+cask "google-chrome"
+cask "iterm2"
+cask "slack"
+
+# mac app store apps
+mas "Xcode", id: 497799835
+mas "Magnet", id: 441258766
+mas "Dato", id: 1470584107
