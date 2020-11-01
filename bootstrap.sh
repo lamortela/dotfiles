@@ -7,6 +7,7 @@ doIt() {
 }
 
 pretendToDoIt() {
+  echo "Dry run of dotfile bootstrap, nothing will be changed"
   rsync --dry-run --exclude-from '.dotignore' -avh --no-perms . $HOME;
 }
 
