@@ -24,9 +24,7 @@ shopt -s cdspell;
 # Case-insensitive globbing
 shopt -s nocaseglob;
 
-# TODO: THIS MAY NOT BE NECESSARY ANYMORE
 # Need this so SSH passphrase isn't constantly asked for in tmux sessions
-# because Sierra sucks
 ssh-add -A 2>/dev/null;
 
 # For nvm installed via homebrew
@@ -35,24 +33,3 @@ ssh-add -A 2>/dev/null;
 # For nvm installed via creationix install.sh
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Initialize pyenv when a new shell is opened
-# if command -v pyenv 1>/dev/null 2>&1; then
-#   eval "$(pyenv init -)"
-# fi
-
-# Initialize pyenv-virtualenv when a new shell is opened
-# if which pyenv-virtualenv-init > /dev/null; then
-#   eval "$(pyenv virtualenv-init -)";
-# fi
-
-# Initialize pyenv-virtualenvwrapper when a new shell is opened
-# if which pyenv-virtualenvwrapper > /dev/null; then
-#   pyenv virtualenvwrapper;
-# fi
-
-# Load RVM into a shell session *as a function*
-# This must be at the end of the file to avoid a warning when
-# running the rvm command
-# [[ -r "$HOME/.rvm/scripts/completion" ]] && \. "$HOME/.rvm/scripts/completion"
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && \. "$HOME/.rvm/scripts/rvm"
