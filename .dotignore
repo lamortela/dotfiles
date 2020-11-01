@@ -1,4 +1,4 @@
-excludes.txt
+.dotignore
 .git/
 .DS_Store
 bootstrap.sh
@@ -9,3 +9,4 @@ Anth-iterm-profile.json
 .tmuxinator/
 stellar.yaml
 iterm/
+.macos

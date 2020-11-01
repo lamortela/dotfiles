@@ -3,11 +3,11 @@
 cd "$(dirname "${BASH_SOURCE}")";
 
 doIt() {
-  rsync --exclude-from 'excludes.txt' -avh --no-perms . ~;
+  rsync --exclude-from '.dotignore' -avh --no-perms . $HOME;
 }
 
 pretendToDoIt() {
-  rsync --dry-run --exclude-from 'excludes.txt' -avh --no-perms . ~;
+  rsync --dry-run --exclude-from '.dotignore' -avh --no-perms . $HOME;
 }
 
 if [ "$1" == "--dry-run" ]; then
