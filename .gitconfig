@@ -17,43 +17,45 @@
 
 [alias]
 	# Diffing
-	dl = "!git ll -1"
-	dslc = diff --cached HEAD^
-	diff = diff --word-diff
+	dc = diff --cached
+	dh1 = diff HEAD~1
+	dch1 = diff --cached HEAD~1
+	ds = diff --stat
 
 	# Grepping
 	f = "!git ls-files | grep -i"
 	grep = grep -Ii
 
 	# List things (History, Aliases)
-	la = "!git config -l | grep alias | cut -c 7-"
-	lds = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%C(magenta)\\ [%cn]" --decorate --date=short --graph
-	ldr = log --pretty=format:"%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Creset%s%C(magenta)\\ [%cn]" --decorate --date=relative --graph
-	le = log --oneline --decorate --graph
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%C(magenta)\\ [%cn]" --decorate --numstat
+	la = config --get-regexp alias
+	ls = log --graph -10 --pretty=format:"%C(yellow)%h%C(reset)\\ %C(cyan)%as%C(reset)\\ %C(magenta)[%an]%C(reset)\\ %C(red)%d%C(reset)\\ %s"
+	lr = log --graph -10 --pretty=format:"%C(yellow)%h%C(reset)\\ %C(cyan)%ar%C(reset)\\ %C(magenta)[%an]%C(reset)\\ %C(red)%d%C(reset)\\ %s"
+	ll = log --pretty=format:"%C(yellow)%h%C(reset)\\ %s" --decorate --numstat
 
 	# Shortcut the basics
-	br = branch
-	ci = commit
+	aa = add --all
+	br = branch -v --sort=-committerdate
+	ca = commit --amend
+	ci = commit --verbose
 	cl = clone
 	co = checkout
+	fa = fetch --all
+	pf = push --force-with-lease
+	po = pull origin
 	s = status -s
 	st = status
-	po = pull --no-edit origin
 
 	# Resets
 	r = reset 		#unstage files in index
-	r1 = reset HEAD^		#undo last commit, put changes in workspace
-	rh = reset --hard		#discard changes in workspace and index since last commit
-	rhm = reset --hard origin/master
-	rs = reset --soft HEAD^		#undo last commit, keep changes in workspace and index
+	r1 = reset HEAD~1		#undo last commit, put changes in workspace
+	rs = reset --soft HEAD~1		#undo last commit, keep changes in workspace and index
 
 	# Stashing
 	sl = stash list
 	sa = stash apply
 	ss = stash save
 
-  # Ctags
+	# Ctags
 	ctags = !.git/hooks/ctags
 
 [init]
