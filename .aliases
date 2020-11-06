@@ -3,27 +3,20 @@
 # Navigation
 alias ..="cd .."
 alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
 alias ~="cd ~"
 alias -- -="cd -"
-alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias anth="cd ~/code/anthlam"
+alias me="cd ~/code/anthlam"
 
 # File management
 alias la="ls -alhFGT"       # ls all, long format, human-readable size, type identifiers, colorized, complete time
-alias lass="ls -alhrFGTS"   # la sorted by increasing size
 alias lats="ls -alhtrFGT"     # la sorted by increasing time modified
+alias lass="ls -alhrFGTS"   # la sorted by increasing size
 alias cat="cat -n"
 alias mv="mv -iv"
 alias cp="cp -Riv"
 alias mkdir="mkdir -vp"
-
-# Show/hide hidden files in Finder
-alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 # OSX
 alias mute="osascript -e 'set volume output muted true'"
@@ -31,24 +24,6 @@ alias unmute="osascript -e 'set volume 3'"
 alias emptytrash="rm -rfv ~/.Trash"
 
 # git shortcuts
-alias ga="git config --get-regexp alias"  # list git aliases
-alias gbr="git br"           # branch
-alias gci="git ci"           # commit
-alias gcl="git cl"           # clone
-alias gco="git co"           # checkout
-alias gd="git diff"          # diff --word-diff
-alias gf="git f"             # ls-files | grep -i
-alias gg="git grep"          # grep -Ii
-alias gla="git la"           # config -l | grep alias | cut -c 7-
-alias glds="git lds -25"     # log --pretty=format:%C(yellow)%h\ %C(cyan)%ad%Cred%d\ %Creset%s%C(magenta)\ [%cn] --decorate --date=short --graph
-alias gldsb="git lds -50"    # log --pretty=format:%C(yellow)%h\ %C(cyan)%ad%Cred%d\ %Creset%s%C(magenta)\ [%cn] --decorate --date=relative --graph
-alias gldr="git ldr -25"     # log --oneline --decorate --graph
-alias grh="git rh"           # reset --hard
-alias grhm="git rhm"         # reset --hard origin/master
-alias grs="git rs"           # reset --soft HEAD^
-alias gs="git s"             # status -s
-alias gst="git st"           # status
-alias gpo="git po"           # pull --no-edit origin
 alias gdmb="git remote prune origin | grep '] origin/' | sed 's/^.*origin\///g' | xargs -L1 -J % git branch -D %"         # Delete branches that have been deleted on the remote repository (works with squash&merge repos)
 
 # Editors
@@ -56,6 +31,7 @@ alias space="open -a emacs"
 alias updatespacemacs="cd ~/.emacs.d && git pull --rebase && cd -"
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
+  alias vi='nvim'
 fi
 
 # process killing/grepping
@@ -78,7 +54,7 @@ alias sop="source ~/.bash_profile;"
 alias ag="ag --hidden --path-to-ignore ~/.ignore"
 
 # Stupid npm
-alias funpm="rm -rf node_modules/ && npm cache clean && npm install"
+alias wtfnpm="rm -rf node_modules/ && npm cache clean && npm install"
 
 # Tmux
 alias tls="tmux ls"
