@@ -70,7 +70,7 @@ This function should only modify configuration layer settings."
      (org :variables
           org-enable-github-support t
           org-enable-org-journal-support t
-          org-journal-dir "~/code/anthlam/til/"
+          org-journal-dir "~/code/me/til/"
           org-journal-file-format "%Y-%m-%d"
           org-journal-date-prefix "#+TITLE: "
           org-journal-date-format "%A, %B %d %Y")

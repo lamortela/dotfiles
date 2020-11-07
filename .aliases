@@ -7,7 +7,7 @@ alias ~="cd ~"
 alias -- -="cd -"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias me="cd ~/code/anthlam"
+alias me="cd ~/code/me"
 
 # File management
 alias la="ls -alhFGT"       # ls all, long format, human-readable size, type identifiers, colorized, complete time
