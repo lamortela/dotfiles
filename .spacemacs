@@ -83,7 +83,8 @@ This function should only modify configuration layer settings."
           sql-capitalize-keywords t)
      syntax-checking
      (terraform :variables
-                terraform-auto-format-on-save t)
+                terraform-auto-format-on-save t
+                terraform-backend 'company-terraform)
      themes-megapack
      (version-control :variables
                       version-control-diff-tool 'diff-hl
