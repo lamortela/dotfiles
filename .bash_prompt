@@ -97,11 +97,10 @@ prompt_dir() {
 
 # End the prompt
 prompt_end(){
-  echo "\n${RESET}${BOLD}${PINK}${PROMPT}${RESET}${BOLD} "
+  echo -n "${RESET}${BOLD}\n${PROMPT} "
 }
 
 build_prompt() {
-  echo ""
   prompt_timestamp
   prompt_context
   prompt_dir
@@ -109,5 +108,5 @@ build_prompt() {
   prompt_end
 }
 
-export PS1="${RESET}$(build_prompt)"
-export PS2="${BOLD}${PINK}${MORE_PROMPT}${RESET}${BOLD} "
+export PS1="${RESET}\n$(build_prompt)"
+export PS2="${MORE_PROMPT} "
