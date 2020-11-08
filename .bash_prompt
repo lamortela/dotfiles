@@ -6,7 +6,8 @@
 # Requires a terminal that supports 256 colors
 # Requires a Powerline-patched font
 
-PROMPT=""
+PROMPT="❱"
+MORE_PROMPT="..."
 PROMPT_SEPERATOR='|'
 PROMPT_ERROR='✘'
 PROMPT_ROOT='⚡'
@@ -71,7 +72,7 @@ prompt_git() {
 
 # Put current time in 12 hour format at beginning of prompt
 prompt_timestamp() {
-  echo -n "${RESET}${BOLD}${ORANGE}\D{%F} \t"
+  echo -n "${RESET}${BOLD}${ORANGE}\t"
 }
 
 # Build user and host portion of the prompt
@@ -96,10 +97,11 @@ prompt_dir() {
 
 # End the prompt
 prompt_end(){
-  echo -n "${RESET}${BOLD}\n\$ "
+  echo "\n${RESET}${BOLD}${PINK}${PROMPT}${RESET}${BOLD} "
 }
 
 build_prompt() {
+  echo ""
   prompt_timestamp
   prompt_context
   prompt_dir
@@ -107,5 +109,5 @@ build_prompt() {
   prompt_end
 }
 
-export PS1="${RESET}\n$(build_prompt)"
-export PS2="${CYAN}→ ${RESET}"
+export PS1="${RESET}$(build_prompt)"
+export PS2="${BOLD}${PINK}${MORE_PROMPT}${RESET}${BOLD} "
