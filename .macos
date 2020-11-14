@@ -722,18 +722,18 @@ defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreade
 # Disable automatic spell checking
 # defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled"
 
-# TODO need to review everything below this
-
 echo -e "\nSpotlight Changes"
 ###############################################################################
 # Spotlight                                                                   #
 ###############################################################################
 
 # Hide Spotlight tray-icon (and subsequent helper)
-#sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
+echo "hide spotlight tray icon"
+sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
 # Disable Spotlight indexing for any volume that gets mounted and has not yet
 # been indexed before.
 # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
+echo "don't index mounted volumes"
 sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
 # Change indexing order and disable some search results
 # Yosemite-specific search results (remove them if you are using macOS 10.9 or older):
@@ -743,6 +743,7 @@ sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Vol
 # 	MENU_SPOTLIGHT_SUGGESTIONS (send search queries to Apple)
 # 	MENU_WEBSEARCH             (send search queries to Apple)
 # 	MENU_OTHER
+echo "change indexing order"
 defaults write com.apple.spotlight orderedItems -array \
 	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
 	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
@@ -767,12 +768,18 @@ defaults write com.apple.spotlight orderedItems -array \
 	'{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
 	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
 # Load new settings before rebuilding the index
+echo "load new settings before rebuilding index"
 killall mds > /dev/null 2>&1
 # Make sure indexing is enabled for the main volume
+echo "enable indexing for main volume"
 sudo mdutil -i on / > /dev/null
 # Rebuild the index from scratch
+echo "rebuild index"
 sudo mdutil -E / > /dev/null
 
+# TODO need to review everything below this
+
+echo -e "\nTerminal & iTerm Changes"
 ###############################################################################
 # Terminal & iTerm 2                                                          #
 ###############################################################################
