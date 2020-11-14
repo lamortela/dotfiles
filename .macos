@@ -859,10 +859,11 @@ echo -e "\nTime Machine Changes"
 ###############################################################################
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
+echo "don't ask to use new drives as backup"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
+# hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 ###############################################################################
 # Activity Monitor                                                            #
