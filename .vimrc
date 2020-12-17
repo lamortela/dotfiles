@@ -117,7 +117,7 @@ endif
 let g:ale_lint_on_save = 1
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'typescript': ['eslint']
+\   'typescript': ['tsserver', 'eslint']
 \}
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
