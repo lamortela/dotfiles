@@ -55,7 +55,7 @@ let g:airline_mode_map = {
 " rulers and such
 set number
 set ruler
-set colorcolumn=100
+set colorcolumn=90
 highlight ColorColumn ctermbg=8
 set showcmd
 set cursorline
