@@ -5,15 +5,19 @@ let g:ale_completion_enabled = 1
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'                | "git wrapper"
+Plug 'airblade/vim-gitgutter'            | "git diff in gutter"
+
 Plug 'vim-airline/vim-airline'           | "status/tabline"
 Plug 'vim-airline/vim-airline-themes'    | "vim-airline themes"
+
 Plug 'ctrlpvim/ctrlp.vim'                | "fuzzy finder"
-Plug 'dense-analysis/ale'                | "syntax checker"
 Plug 'tpope/vim-surround'                | "parenthesizing"
-Plug 'airblade/vim-gitgutter'            | "git diff in gutter"
-Plug 'pangloss/vim-javascript'           | "JS indentation and syntax"
 Plug 'bronson/vim-trailing-whitespace'   | "highlights trailing whitespace"
+
+Plug 'dense-analysis/ale'                | "syntax checker"
+Plug 'pangloss/vim-javascript'           | "JS indentation and syntax"
 Plug 'leafgarland/typescript-vim'        | "typescript syntax highlighting"
+
 Plug 'gertjanreynaert/cobalt2-vim-theme' | "Cobalt2 color scheme"
 
 call plug#end()
