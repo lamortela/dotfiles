@@ -4,7 +4,6 @@ let g:ale_completion_enabled = 1
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'gmarik/Vundle.vim'
 Plug 'tpope/vim-fugitive'                | "git wrapper"
 Plug 'vim-airline/vim-airline'           | "status/tabline"
 Plug 'vim-airline/vim-airline-themes'    | "vim-airline themes"
