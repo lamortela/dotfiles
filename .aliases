@@ -13,7 +13,6 @@ alias me="cd ~/code/me"
 alias la="ls -alhFGT"       # ls all, long format, human-readable size, type identifiers, colorized, complete time
 alias lats="ls -alhtrFGT"     # la sorted by increasing time modified
 alias lass="ls -alhrFGTS"   # la sorted by increasing size
-alias cat="cat -n"
 alias mv="mv -iv"
 alias cp="cp -Riv"
 alias mkdir="mkdir -vp"
