@@ -1,7 +1,10 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "mongodb/brew"
+tap "railwaycat/emacsmacport"
+tap "hashicorp/tap"
 
 # terminal
 brew "bash"
@@ -17,7 +20,7 @@ brew "bat"
 brew "vim"
 brew "neovim"
 brew "ctags"
-brew "railwaycat/emacsmacport/emacs-mac", args: ["with-natural-title-bar", "with-spacemacs-icon"]
+brew "emacs-mac", args: ["with-natural-title-bar", "with-spacemacs-icon"]
 brew "yamllint"
 
 # search
