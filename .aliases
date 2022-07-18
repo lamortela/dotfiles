@@ -37,7 +37,7 @@ fi
 alias pk="pkill -9 \!^"
 
 # Search bash history
-alias gh="history | grep "
+alias hg="history | grep "
 
 # Postgres
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
