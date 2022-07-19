@@ -21,7 +21,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo -e "Setting up MacOS how you like it."
 
-echo "\nDotfile and Tool Setup"
+echo "Dotfile and Tool Setup"
 echo "making 'code' directory"
 mkdir -p "${HOME}/code"
 
@@ -38,14 +38,6 @@ ln -s /usr/local/opt/emacs-mac/Emacs.app /Applications/
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 (cd ~/.emacs.d/ && git checkout develop)
 
-echo "installing nvm"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-
-echo "installing latest node lts"
-nvm install --lts --latest-npm
-echo "node --version: $(node --version)"
-echo "npm --version: $(npm --version)"
-
 echo "generating RSA token for Github"
 mkdir -p "${HOME}/.ssh"
 ssh-keygen -t ed25519 -C "lamorte@gmail.com"
@@ -57,7 +49,6 @@ echo "*** run 'pbcopy < ~/.ssh/id_ed25519.pub' and paste that into Github"
 
 echo "cloning dotfiles"
 git clone git@github.com:anthlam/dotfiles.git "${HOME}/code/me/dotfiles"
-git checkout new-work-machine-07182022
 
 echo "linking dotfiles"
 ln -s "${HOME}/code/me/dotfiles/.aliases" "${HOME}/.aliases"
@@ -81,6 +72,14 @@ echo "changing shell to bash and reloading"
 echo "/usr/local/bin/bash" >> /etc/shells
 chsh -s /usr/local/bin/bash
 exec "${SHELL}"
+
+echo "installing nvm"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+echo "installing latest node lts"
+nvm install --lts --latest-npm
+echo "node --version: $(node --version)"
+echo "npm --version: $(npm --version)"
 
 
 echo -e "\nUI/UX Settings"
