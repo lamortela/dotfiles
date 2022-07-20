@@ -34,11 +34,14 @@ brew "task"
 # programming tools
 brew "hashicorp/tap/terraform"
 brew "tfenv"
+brew "grep"
 brew "mongodb/brew/mongodb-community"
 brew "jq"
 brew "groovy"
 brew "go"
 brew "k9s"
+brew "kubernetes-cli"
+brew "kubectx"
 
 # desktop apps
 #cask "1password"
