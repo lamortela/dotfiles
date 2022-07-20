@@ -2,7 +2,7 @@ let mapleader = "\<Space>"
 set encoding=utf-8
 let g:ale_completion_enabled = 1
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 Plug 'tpope/vim-fugitive'                | "git wrapper"
 Plug 'airblade/vim-gitgutter'            | "git diff in gutter"
