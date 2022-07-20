@@ -50,7 +50,6 @@ This function should only modify configuration layer settings."
 
      emacs-lisp
      git
-     github
      helm
      html
      (javascript :variables
