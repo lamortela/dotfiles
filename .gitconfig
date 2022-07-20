@@ -7,7 +7,7 @@
 [core]
 	autocrlf = input
 	excludesfile = /Users/anthlam/.gitignore_global
-	editor = vim
+	editor = nvim
 
 [push]
 	default = simple
