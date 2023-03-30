@@ -50,6 +50,8 @@ This function should only modify configuration layer settings."
 
      emacs-lisp
      git
+     (groovy :variables
+             groovy-backend 'company-groovy)
      helm
      html
      (javascript :variables
@@ -67,14 +69,18 @@ This function should only modify configuration layer settings."
                markdown-live-preview-engine 'vmd)
      multiple-cursors
      (org :variables
+          org-todo-dependencies-strategy 'naive-auto
           org-enable-github-support t
           org-enable-org-journal-support t
+          org-startup-indented t
+          org-want-todo-bindings t
           org-journal-dir "~/code/me/til/"
           org-journal-file-format "%Y-%m-%d"
-          org-journal-date-prefix "#+TITLE: "
-          org-journal-date-format "%A, %B %d %Y")
-     (osx :variables
-          osx-right-command-as 'meta)
+          org-journal-date-prefix ""
+          org-journal-date-format "%A, %B %d %Y"
+          org-journal-time-prefix "* "
+          org-journal-time-format "")
+     (osx :variables osx-right-command-as 'meta)
      prettier
      ;; (rust :variables
      ;;       rust-backend 'lsp

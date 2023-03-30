@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 # default editor
-EDITOR=vim;
+EDITOR=nvim;
 PSQL_EDITOR="vim -u NONE";
 FCEDIT=/usr/local/bin/vim;
+export KUBE_EDITOR=$EDITOR;
 
 # nvm
 NVM_DIR=~/.nvm;

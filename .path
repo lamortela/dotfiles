@@ -5,5 +5,6 @@ PATH="/usr/local/bin:$(getconf PATH)"
 
 # path
 # RVM_HOME=$HOME/.rvm/bin
-BREW_PYTHON_HOME=/usr/local/opt/python/libexec/bin
-PATH="/usr/local/Cellar:/usr/local/sbin:$BREW_PYTHON_HOME:$PATH"
+BREW_PYTHON_HOME=/usr/local/opt/python@3.10/bin
+GO_BIN=$HOME/go/bin
+PATH="/usr/local/Cellar:/usr/local/sbin:$BREW_PYTHON_HOME:$GO_BIN:$PATH"
