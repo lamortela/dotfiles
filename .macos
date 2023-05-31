@@ -29,7 +29,7 @@ echo "installing Homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 echo "brew installing"
-curl https://raw.githubusercontent.com/anthlam/dotfiles/new-work-machine-07182022/.brewfile | tee "${HOME}/.brewfile"
+curl https://raw.githubusercontent.com/anthlam/dotfiles/master/.brewfile | tee "${HOME}/.brewfile"
 brew bundle --file="${HOME}/.brewfile"
 echo "*** Review caveats to see if there is anything that needs to be done"
 
@@ -40,7 +40,7 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 echo "generating RSA token for Github"
 mkdir -p "${HOME}/.ssh"
-ssh-keygen -t ed25519 -C "lamorte@gmail.com"
+ssh-keygen -t ed25519 -C "lamorte+github@gmail.com"
 eval "$(ssh-agent -s)"
 touch "${HOME}/.ssh/config"
 echo "Host *\n AddKeysToAgent yes\n UseKeychain yes\n IdentifyFile ~/.ssh/id_ed25519" | tee "${HOME}/.ssh/config"
