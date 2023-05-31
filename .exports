@@ -34,3 +34,6 @@ PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND";
 export AWS_VAULT_BACKEND=file;
 export AWS_ASSUME_ROLE_TTL=4h
 export AWS_SESSION_TTL=4h
+
+# for Layer0
+export KUBECONFIG="$KUBECONFIG:/Users/anthlam/.kube/layer0-sbx:/Users/anthlam/.kube/layer0-dev:/Users/anthlam/.kube/layer0-prod"
