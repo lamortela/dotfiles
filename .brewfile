@@ -20,6 +20,7 @@ brew "bat"
 brew "vim"
 brew "neovim"
 brew "ctags"
+brew "gnu-tar"
 brew "emacs-mac", args: ["with-natural-title-bar", "with-spacemacs-icon"]
 brew "yamllint"
 
