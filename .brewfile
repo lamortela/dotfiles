@@ -12,21 +12,22 @@ brew "bash-completion@2"
 brew "coreutils"
 brew "tmux"
 brew "reattach-to-user-namespace"
-#brew "git"
+brew "git"
 brew "hub"
 brew "bat"
+
+# search
+brew "ripgrep"
+brew "the_silver_searcher"
 
 # editor
 brew "vim"
 brew "neovim"
 brew "ctags"
-brew "gnu-tar"
+brew "sqlite" # prereq for magit
+brew "gnu-tar" # prereq for emacs
 brew "emacs-mac", args: ["with-natural-title-bar", "with-spacemacs-icon"]
 brew "yamllint"
-
-# search
-brew "ripgrep"
-brew "the_silver_searcher"
 
 # productivity
 brew "mas"
