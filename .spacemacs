@@ -45,7 +45,7 @@ This function should only modify configuration layer settings."
                       auto-completion-return-key-behavior nil
                       auto-completion-tab-key-behavior 'complete
                       auto-completion-enable-help-tooltip t
-                      auto-completion-minimum-prefix-length 1
+                      auto-completion-minimum-prefix-length 2
                       auto-completion-use-company-box t)
      csv
      (docker :variables
@@ -635,7 +635,9 @@ before packages are loaded."
   (setq powerline-default-separator 'arrow-fade)
 
   ;; set fill-column width for git commit buffer to recommended width
-  (add-hook 'git-commit-mode-hook (lambda () (setq fill-column 70)))
+  (add-hook 'git-commit-mode-hook (lambda ()
+                                    (setq fill-column 70)
+                                    (spacemacs/toggle-auto-completion-off)))
 
   ;; increase key-chord delays
   (setq-default key-chord-two-keys-delay 0.2
