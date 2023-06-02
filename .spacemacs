@@ -59,7 +59,7 @@ This function should only modify configuration layer settings."
                  javascript-fmt-on-save t
                  javascript-backend 'lsp
                  js2-include-node-externs t
-                 javascript-repl 'node-js
+                 javascript-repl 'nodejs
                  js-indent-level 2
                  js2-mode-show-strict-warnings nil
                  js2-mode-show-parse-errors nil
