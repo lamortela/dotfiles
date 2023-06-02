@@ -24,6 +24,8 @@ brew "the_silver_searcher"
 brew "vim"
 brew "neovim"
 brew "ctags"
+brew "cmake" # prereq for vterm
+brew "libvterm" # prereq for vterm
 brew "sqlite" # prereq for magit
 brew "gnu-tar" # prereq for emacs
 brew "emacs-mac", args: ["with-natural-title-bar", "with-spacemacs-icon"]

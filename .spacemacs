@@ -85,7 +85,9 @@ This function should only modify configuration layer settings."
      ;; (rust :variables
      ;;       rust-backend 'lsp
      ;;       rust-format-on-save t)
-     shell
+     (shell :variables
+            shell-default-shell 'vterm
+            spacemacs-vterm-history-file-location "~/.bash_history")
      spell-checking
      (sql :variables
           sql-capitalize-keywords t)
@@ -678,6 +680,9 @@ before packages are loaded."
 
   ;; Enable Fira Code ligatures
   (mac-auto-operator-composition-mode)
+
+  ;; Use iterm2 with terminal-here
+  (setq terminal-here-mac-terminal-command 'iterm2)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
