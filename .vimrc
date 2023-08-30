@@ -10,7 +10,9 @@ Plug 'airblade/vim-gitgutter'            | "git diff in gutter"
 Plug 'vim-airline/vim-airline'           | "status/tabline"
 Plug 'vim-airline/vim-airline-themes'    | "vim-airline themes"
 
-Plug 'ctrlpvim/ctrlp.vim'                | "fuzzy finder"
+Plug 'ctrlpvim/ctrlp.vim'                | "old fuzzy finder"
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() }}
+Plug 'junegunn/fzf.vim'                  | "new fuzzy finder"
 Plug 'tpope/vim-surround'                | "parenthesizing"
 Plug 'bronson/vim-trailing-whitespace'   | "highlights trailing whitespace"
 
@@ -93,24 +95,16 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:50'
 let g:ctrlp_max_files = 0
 let g:ctrlp_show_hidden=1
 
-" for Silver Searcher
-if executable('ag')
-  " use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
+" for ripgrep
+if executable('rg')
+  " use rg over grep
+  set grepprg=rg\ --vimgrep\ --smart-case\ --follow\ --hidden
 
-  " use ag in CtrlP for listing files.
-  " works with agignore file in $HOME
-  let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
+  " use rg in CtrlP for listing files
+  let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
 
-  " ag is fast enough that CtrlP doesn't need to cache
+  " rg is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
-
-  " bind K to grep word under cursor
-  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-  " bind \ (backward slash) to grep shortcut
-  command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-  nnoremap \ :Ag<SPACE>
 endif
 
 "for ALE
@@ -127,19 +121,21 @@ let g:ale_fixers = {
 \   'typescript': ['prettier', 'eslint']
 \}
 
-" my keymap (the pipe is not part of the command, it just enables inline comments)
-inoremap fd <Esc>|                                  "exit insert mode
-nnoremap sa :w<CR>|                                 "save file from normal mode
-nnoremap <leader>js :%!python3 -m json.tool<CR>|     "pretty print json"
-nnoremap <C-h> <C-w>h|                              "switch split left
-nnoremap <C-j> <C-w>j|                              "switch split down
-nnoremap <C-k> <C-w>k|                              "switch split up
-nnoremap <C-l> <C-w>l|                              "switch split right
-map <leader>x :bd<CR>|                              "delete buffer
-map <leader>c :!git ctags<CR><CR>|                  "re/create ctags
-nmap <silent> <leader><Space> :FixWhitespace<CR>|   "delete trailing whitespace
-nmap <silent> <CR> :silent noh<CR>|                 "clear search highlighting
-nnoremap <C-c> :bnext\|bdelete #<CR>|               "delete buffer without deleting window
+" my keymap (don't put whitespace in front of pipes, or it all breaks)
+inoremap fd <Esc>|                                 "exit insert mode
+nnoremap sa :w<CR>|                                "save file from normal mode
+nnoremap <leader>js :%!python3 -m json.tool<CR>|   "pretty print json"
+nnoremap <C-h> <C-w>h|                             "switch split left
+nnoremap <C-j> <C-w>j|                             "switch split down
+nnoremap <C-k> <C-w>k|                             "switch split up
+nnoremap <C-l> <C-w>l|                             "switch split right
+map <leader>x :bd<CR>|                             "delete buffer
+nnoremap <C-c> :bp\|bd #<CR>|                      "delete buffer, keep split
+map <leader>c :!git ctags<CR><CR>|                 "re/create ctags
+nmap <silent> <leader><Space> :nohlsearch<CR>|     "clear search highlighting
+nnoremap <silent> <C-f> :Files<CR>|                "search files with fzf"
+nnoremap <silent> <leader>f :Rg<CR>|               "search inside files with ripgrep"
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>|     "grep word under cursor
 "ctags go to definition
 "ctags go back
 "nav buffers in single pane

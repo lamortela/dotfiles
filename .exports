@@ -35,3 +35,8 @@ export AWS_VAULT_BACKEND=file;
 export AWS_ASSUME_ROLE_TTL=4h
 export AWS_SESSION_TTL=4h
 
+# make fzf use ripgrep
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files --hidden'
+  export FZF_DEFAULT_OPTS='-m'
+fi
