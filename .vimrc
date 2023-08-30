@@ -2,6 +2,13 @@ let mapleader = "\<Space>"
 set encoding=utf-8
 let g:ale_completion_enabled = 1
 
+" install vim-plug automatically
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin()
 
 Plug 'tpope/vim-fugitive'                | "git wrapper"
