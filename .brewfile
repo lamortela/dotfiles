@@ -10,7 +10,6 @@ brew "coreutils"
 brew "tmux"
 brew "reattach-to-user-namespace"
 brew "git"
-brew "hub"
 brew "bat"
 
 # search
@@ -31,21 +30,14 @@ brew "yamllint"
 
 # productivity
 brew "mas"
-brew "task"
 
 # command line tools
 brew "grep"
 brew "jq"
 
-# desktop apps
-#cask "1password"
-cask "alfred"
-cask "firefox"
+# fonts
 cask "font-fira-code"
-#cask "google-chrome"
-cask "iterm2"
-#cask "slack"
 
 # mac app store apps
-#mas "Xcode", id: 497799835
+mas "Xcode", id: 497799835
 mas "Magnet", id: 441258766
