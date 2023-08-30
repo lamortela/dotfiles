@@ -7,10 +7,7 @@ done;
 unset file;
 
 # Enable Homebrew bash completion
-if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
-  export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
-  source $(brew --prefix)/share/bash-completion/bash_completion
-fi
+[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 
 # For bash completion
 # . ~/.bin/.tmuxinator.bash;
