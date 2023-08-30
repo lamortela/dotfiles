@@ -1,10 +1,7 @@
-tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
-tap "mongodb/brew"
 tap "railwaycat/emacsmacport"
-tap "hashicorp/tap"
 
 # terminal
 brew "bash"
@@ -35,17 +32,9 @@ brew "yamllint"
 brew "mas"
 brew "task"
 
-# programming tools
-brew "hashicorp/tap/terraform"
-brew "tfenv"
+# command line tools
 brew "grep"
-brew "mongodb/brew/mongodb-community"
 brew "jq"
-brew "groovy"
-brew "go"
-brew "k9s"
-brew "kubernetes-cli"
-brew "kubectx"
 
 # desktop apps
 #cask "1password"
