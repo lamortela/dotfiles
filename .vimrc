@@ -11,7 +11,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin()
+call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'                | "git wrapper"
 Plug 'airblade/vim-gitgutter'            | "git diff in gutter"
