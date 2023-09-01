@@ -1,7 +1,8 @@
 " Disable Vi compatibility (this is nvim's default)
 set nocompatible
 
-let mapleader = "\<Space>"
+" Enable completion where available.
+" This setting must be set before ALE is loaded.
 let g:ale_completion_enabled = 1
 
 " install vim-plug automatically
@@ -11,6 +12,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" install plugins, check if nvim present to determine install location
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'                | "git wrapper"
@@ -44,31 +46,6 @@ set encoding=utf-8
 " appearance
 colors cobalt2
 set visualbell
-
-" for vim-airline
-set laststatus=2
-let g:airline_powerline_fonts = 1
-let g:airline_theme='simple'
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline_inactive_collapse=1
-let g:airline#extensions#tabline#enabled = 0
-let g:airline_mode_map = {
-    \ '__' : '-',
-    \ 'n'  : 'N',
-    \ 'i'  : 'I',
-    \ 'R'  : 'R',
-    \ 'v'  : 'V',
-    \ 'V'  : 'V-L',
-    \ '^V' : 'V-B',
-    \ 'c'  : 'CMD',
-    \ 's'  : 'S',
-    \ 'S'  : 'S-L',
-    \ '^S' : 'S-B',
-    \ 't'  : 'T',
-    \ }
-
-" rulers and such
 set number
 set ruler
 set colorcolumn=90
@@ -76,7 +53,7 @@ highlight ColorColumn ctermbg=8
 set showcmd
 set cursorline
 
-" tabs and white space
+" white space
 set nowrap
 set expandtab
 set tabstop=2
@@ -100,16 +77,37 @@ set noswapfile
 set scrolloff=5
 set nostartofline
 
+" vim-airline configuration
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline_theme='simple'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_inactive_collapse=1
+let g:airline#extensions#tabline#enabled = 0
+let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V-L',
+    \ '^V' : 'V-B',
+    \ 'c'  : 'CMD',
+    \ 's'  : 'S',
+    \ 'S'  : 'S-L',
+    \ '^S' : 'S-B',
+    \ 't'  : 'T',
+    \ }
 
-" for Ctags
+" Ctags configuration
 set tags=./.git/tags,tags
 
-" for CtrlP
+" CtrlP configuration
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:50'
 let g:ctrlp_max_files = 0
 let g:ctrlp_show_hidden=1
 
-" for ripgrep
 if executable('rg')
   " use rg over grep
   set grepprg=rg\ --vimgrep\ --smart-case\ --follow\ --hidden
@@ -121,7 +119,7 @@ if executable('rg')
   let g:ctrlp_use_caching = 0
 endif
 
-"for ALE
+" ALE configuration
 let g:ale_lint_on_save = 1
 let g:ale_linters = {
 \   'javascript': ['eslint'],
@@ -135,8 +133,11 @@ let g:ale_fixers = {
 \   'typescript': ['prettier', 'eslint']
 \}
 
+" change leader key
+let mapleader = "\<Space>"
+
 " my keymap (don't put whitespace in front of pipes, or it all breaks)
-inoremap fd <Esc>|                                 "exit insert mode
+inoremap jk <Esc>|                                 "exit insert mode
 nnoremap sa :w<CR>|                                "save file from normal mode
 nnoremap <leader>js :%!python3 -m json.tool<CR>|   "pretty print json"
 nnoremap <C-h> <C-w>h|                             "switch split left
