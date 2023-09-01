@@ -1,3 +1,6 @@
+" Disable Vi compatibility (this is nvim's default)
+set nocompatible
+
 let mapleader = "\<Space>"
 set encoding=utf-8
 let g:ale_completion_enabled = 1
