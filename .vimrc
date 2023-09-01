@@ -2,7 +2,6 @@
 set nocompatible
 
 let mapleader = "\<Space>"
-set encoding=utf-8
 let g:ale_completion_enabled = 1
 
 " install vim-plug automatically
@@ -35,7 +34,10 @@ Plug 'gertjanreynaert/cobalt2-vim-theme' | "Cobalt2 color scheme"
 call plug#end()
 
 filetype plugin indent on
-syntax enable
+
+" turn on syntax highlighting
+syntax on
+set encoding=utf-8
 
 " appearance
 colors cobalt2
