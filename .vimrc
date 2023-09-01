@@ -33,6 +33,8 @@ Plug 'gertjanreynaert/cobalt2-vim-theme' | "Cobalt2 color scheme"
 
 call plug#end()
 
+" turn on filetype detection, indent scripts, and filetype plugins
+" keep this after plugins block
 filetype plugin indent on
 
 " turn on syntax highlighting
