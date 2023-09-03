@@ -8,7 +8,6 @@ brew "bash"
 brew "bash-completion@2"
 brew "coreutils"
 brew "tmux"
-brew "reattach-to-user-namespace"
 brew "git"
 brew "bat"
 
