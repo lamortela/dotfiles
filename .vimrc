@@ -76,6 +76,7 @@ set backspace=indent,eol,start
 set noswapfile
 set scrolloff=5
 set nostartofline
+set nrformats+=alpha
 
 " vim-airline configuration
 set laststatus=2
