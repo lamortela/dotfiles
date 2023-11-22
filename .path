@@ -8,5 +8,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # path
 # RVM_HOME=$HOME/.rvm/bin
-BREW_PYTHON_HOME=$(brew --prefix)/opt/python@3.11/bin
-PATH="$(brew --prefix)/Cellar:$BREW_PYTHON_HOME:$PATH"
+BREW_PYTHON_HOME=$(brew --prefix)/opt/python@3.12/bin
+GO_BIN=$HOME/go/bin
+PATH="$(brew --prefix)/Cellar:$BREW_PYTHON_HOME:$GO_BIN:$PATH"

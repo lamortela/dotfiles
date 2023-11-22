@@ -44,8 +44,9 @@ This function should only modify configuration layer settings."
                       :variables
                       auto-completion-return-key-behavior nil
                       auto-completion-tab-key-behavior 'complete
-                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-help-tooltip 'manual
                       auto-completion-minimum-prefix-length 2
+                      auto-completion-idle-delay 0.0
                       auto-completion-use-company-box t)
      csv
      (docker :variables
@@ -661,6 +662,9 @@ before packages are loaded."
 
   ;; map buffer save to "sa" key chord
   (key-chord-define evil-normal-state-map "sa" 'save-buffer)
+
+  ;; change evil-escape key sequence from "fd" to "jk"
+  (setq-default evil-escape-key-sequence "jk")
 
   ;; zoom in/out/reset
   (global-set-key (kbd "C-=") 'spacemacs/zoom-frm-in)

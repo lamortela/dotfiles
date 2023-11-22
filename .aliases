@@ -64,5 +64,5 @@ alias hdu1="du -hd1 | sort -rh"
 alias hdut10="du -hd1 | sort -rh | head -10"
 alias hdf="df -ah"
 
-#kubernetes
+# Kubernetes
 alias kc="kubectl"
