@@ -25,27 +25,14 @@ echo "Dotfile and Tool Setup"
 echo "making 'code' directory"
 mkdir -p "${HOME}/code"
 
-echo "installing Homebrew"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-echo "brew installing"
-curl https://raw.githubusercontent.com/anthlam/dotfiles/master/.brewfile | tee "${HOME}/.brewfile"
-brew bundle --file="${HOME}/.brewfile"
-echo "*** Review caveats to see if there is anything that needs to be done"
-
-echo "setting up spacemacs"
-ln -s /usr/local/opt/emacs-mac/Emacs.app /Applications/
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-(cd ~/.emacs.d/ && git checkout develop)
-
 echo "generating RSA token for Github"
 mkdir -p "${HOME}/.ssh"
 ssh-keygen -t ed25519 -C "lamorte+github@gmail.com"
 eval "$(ssh-agent -s)"
 touch "${HOME}/.ssh/config"
 echo "Host *\n AddKeysToAgent yes\n UseKeychain yes\n IdentifyFile ~/.ssh/id_ed25519" | tee "${HOME}/.ssh/config"
-ssh-add -K "${HOME}/.ssh/id_ed25519"
-echo "*** run 'pbcopy < ~/.ssh/id_ed25519.pub' and paste that into Github"
+ssh-add --apple-use-keychain "${HOME}/.ssh/id_ed25519"
+read -n1 -rsp $"*** In another shell, run 'pbcopy < ~/.ssh/id_ed25519.pub' and paste that into Github. Dotfile linking and tool installation happens next. Press enter to continue or Ctrl+C to quit.\n" key
 
 echo "cloning dotfiles"
 git clone git@github.com:anthlam/dotfiles.git "${HOME}/code/me/dotfiles"
@@ -55,6 +42,7 @@ ln -s "${HOME}/code/me/dotfiles/.aliases" "${HOME}/.aliases"
 ln -s "${HOME}/code/me/dotfiles/.bash_profile" "${HOME}/.bash_profile"
 ln -s "${HOME}/code/me/dotfiles/.bash_prompt" "${HOME}/.bash_prompt"
 ln -s "${HOME}/code/me/dotfiles/.bashrc" "${HOME}/.bashrc"
+ln -s "${HOME}/code/me/dotfiles/.brewfile" "${HOME}/.brewfile"
 ln -s "${HOME}/code/me/dotfiles/.exports" "${HOME}/.exports"
 ln -s "${HOME}/code/me/dotfiles/.functions" "${HOME}/.functions"
 ln -s "${HOME}/code/me/dotfiles/.gitconfig" "${HOME}/.gitconfig"
@@ -68,18 +56,37 @@ ln -s "${HOME}/code/me/dotfiles/.spacemacs" "${HOME}/.spacemacs"
 ln -s "${HOME}/code/me/dotfiles/.tmux.conf" "${HOME}/.tmux.conf"
 ln -s "${HOME}/code/me/dotfiles/.vimrc" "${HOME}/.vimrc"
 
-echo "changing shell to bash and reloading"
-echo "/usr/local/bin/bash" >> /etc/shells
-chsh -s /usr/local/bin/bash
+echo "installing Homebrew"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+echo "installing latest bash and changing shell to bash"
+brew install bash
+echo "$(brew --prefix)/bin/bash" >> /etc/shells
+chsh -s "$(brew --prefix)/bin/bash"
 exec "${SHELL}"
 
+echo "brew installing"
+brew bundle --file="${HOME}/.brewfile"
+read -n1 -rsp $"*** Review caveats to see if there is anything that needs to be done. Dev tool setup happens next. Press enter to continue or Ctrl+C to quit\n" key
+
+# TODO setup neovim init.vim to point at .vimrc
+
+echo "setup fzf key bindings and fuzzy completion"
+$(brew --prefix)/opt/fzf/install
+
+echo "setting up spacemacs"
+ln -s "$(brew --prefix)/opt/emacs-mac/Emacs.app /Applications/"
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+(cd ~/.emacs.d/ && git checkout develop)
+
 echo "installing nvm"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
 echo "installing latest node lts"
 nvm install --lts --latest-npm
 echo "node --version: $(node --version)"
 echo "npm --version: $(npm --version)"
+read -n1 -rsp $"Review output so far to see if it is safe to continue. macos configuration happens next. Press enter to continue or Ctrl+C to quit\n" key
 
 
 echo -e "\nUI/UX Settings"
@@ -144,8 +151,8 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
-echo "remove duplicates in the 'Open With' menu"
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+echo "remove duplicates in the 'Open With' menu, by resetting the launch services database"
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -v -apps u,s,l
 
 # Display ASCII control characters using caret notation in standard text views
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
@@ -158,8 +165,8 @@ echo "remove duplicates in the 'Open With' menu"
 # defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
 
 # Disable the crash reporter
-echo "disable crash reporter"
-defaults write com.apple.CrashReporter DialogType -string "none"
+# echo "disable crash reporter"
+# defaults write com.apple.CrashReporter DialogType -string "none"
 
 # Set Help Viewer windows to non-floating mode
 # defaults write com.apple.helpviewer DevMode -bool true
@@ -171,8 +178,8 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
-echo "reveal admin info when clicking clock on the login window"
-sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+# echo "reveal admin info when clicking clock on the login window"
+# sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 # Disable Notification Center and remove the menu bar icon
 # launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
@@ -202,6 +209,7 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 #rm -rf ~/Library/Application Support/Dock/desktoppicture.db
 #sudo rm -rf /System/Library/CoreServices/DefaultDesktop.jpg
 #sudo ln -s /path/to/your/image /System/Library/CoreServices/DefaultDesktop.jpg
+read -n1 -rsp $"Review output so far to see if it is safe to continue. Press enter to continue or Ctrl+C to quit\n" key
 
 echo -e "\nMouse, Keyboard, Bluetooth Settings"
 ###############################################################################
@@ -210,7 +218,8 @@ echo -e "\nMouse, Keyboard, Bluetooth Settings"
 
 # Trackpad: enable tap to click for this user and for the login screen
 echo "enable tap to click"
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -int 1
+defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
@@ -242,11 +251,12 @@ echo "enable full keyboard access for all controls (i.e. being able to tab throu
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
 
 # Use scroll gesture with the Ctrl (^) modifier key to zoom
-echo "enable Ctrl+two-finger-scroll for zooming in"
-defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
-defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+# echo "enable Ctrl+two-finger-scroll for zooming in"
+# defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+# defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+
 # Follow the keyboard focus while zoomed in
-defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
+# defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
 # Disable press-and-hold for keys in favor of key repeat
 echo "disable press-and-hold"
@@ -273,6 +283,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
 # Stop iTunes from responding to the keyboard media keys
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
+read -n1 -rsp $"Review output so far to see if it is safe to continue. Press enter to continue or Ctrl+C to quit\n" key
 
 echo -e "\nPower Management Settings"
 ###############################################################################
@@ -280,8 +291,8 @@ echo -e "\nPower Management Settings"
 ###############################################################################
 
 # Enable lid wakeup
-echo "enable lid wakeup"
-sudo pmset -a lidwake 1
+# echo "enable lid wakeup"
+# sudo pmset -a lidwake 1
 
 # Restart automatically on power loss
 # sudo pmset -a autorestart 1
@@ -307,7 +318,7 @@ sudo pmset -b sleep 15
 
 # Never go into computer sleep mode
 echo "disable computer sleep after idle time"
-sudo systemsetup -setcomputersleep Never > /dev/null
+sudo systemsetup -setcomputersleep 15
 
 # Hibernation mode
 # 0: Disable hibernation (speeds up entering sleep mode)
@@ -321,6 +332,7 @@ sudo systemsetup -setcomputersleep Never > /dev/null
 # sudo touch /private/var/vm/sleepimage
 # …and make sure it can’t be rewritten
 # sudo chflags uchg /private/var/vm/sleepimage
+read -n1 -rsp $"Review output so far to see if it is safe to continue. Press enter to continue or Ctrl+C to quit\n" key
 
 echo -e "\nScreen Settings"
 ###############################################################################
@@ -328,12 +340,13 @@ echo -e "\nScreen Settings"
 ###############################################################################
 
 # Require password immediately after sleep or screen saver begins
-echo "require password after sleep or screen saver"
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
+# echo "require password after sleep or screen saver"
+# defaults write com.apple.screensaver askForPassword -int 1
+# defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-# Save screenshots to the desktop
-# defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+# Save screenshots to the ~/Documents/Screenshots
+echo "save screenshots to ~/Documents/Screenshots"
+defaults write com.apple.screencapture location -string "${HOME}/Documents/Screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 echo "set screenshot format to PNG"
@@ -349,6 +362,7 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
 # Enable HiDPI display modes (requires restart)
 # sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+read -n1 -rsp $"Review output so far to see if it is safe to continue. Press enter to continue or Ctrl+C to quit\n" key
 
 echo -e "\nFinder Settings"
 ###############################################################################
