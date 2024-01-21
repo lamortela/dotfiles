@@ -69,7 +69,10 @@ echo "brew installing"
 brew bundle --file="${HOME}/.brewfile"
 read -n1 -rsp $"*** Review caveats to see if there is anything that needs to be done. Dev tool setup happens next. Press enter to continue or Ctrl+C to quit\n" key
 
-# TODO setup neovim init.vim to point at .vimrc
+echo "point neovim at .vimrc (https://neovim.io/doc/user/nvim.html#nvim-from-vim)"
+echo "set runtimepath^=~/.vim runtimepath+=~/.vim/after" > "${HOME}/.config/nvim/init.vim"
+echo "let &packpath = &runtimepath" >> "${HOME}/.config/nvim/init.vim"
+echo "source ~/.vimrc" >> "${HOME}/.config/nvim/init.vim"
 
 echo "setup fzf key bindings and fuzzy completion"
 $(brew --prefix)/opt/fzf/install
