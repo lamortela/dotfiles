@@ -21,7 +21,7 @@ brew "fzf"
 # editor
 brew "vim"
 brew "neovim"
-brew "ctags"
+brew "universal-ctags"
 brew "cmake" # prereq for vterm/emacs
 brew "libvterm" # prereq for vterm/emacs
 brew "sqlite" # prereq for magit/emacs
