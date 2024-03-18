@@ -6,3 +6,4 @@ my-notes/
 .DS_Store
 db-backups/
 tags
+.tags

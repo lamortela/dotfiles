@@ -102,7 +102,7 @@ let g:airline_mode_map = {
     \ }
 
 " Ctags configuration
-set tags=./.git/tags,tags
+set tags=./.tags,.tags
 
 " CtrlP configuration
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:50'
