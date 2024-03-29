@@ -60,6 +60,7 @@
 
 [init]
 	templateDir = ~/.git_template
+  defaultBranch = main
 
 [grep]
   lineNumber = true
