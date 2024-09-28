@@ -12,9 +12,6 @@
 [push]
 	default = simple
 
-[credential]
-	helper = osxkeychain
-
 [alias]
 	# Diffing
 	dc = diff --cached
@@ -67,4 +64,10 @@
 [pull]
 	rebase = true
 [merge]
-  conflictStyle = diff3
+	conflictStyle = diff3
+
+[includeIf "gitdir:~/code/work/"]
+  path = ~/.gitconfig.work
+
+[includeIf "gitdir:~/code/me/"]
+  path = ~/.gitconfig.personal
