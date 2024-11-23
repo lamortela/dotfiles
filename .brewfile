@@ -12,6 +12,9 @@ brew "tmux"
 brew "git"
 brew "bat"
 brew "shellcheck"
+brew "tree"
+brew "fd"
+brew "httpie"
 
 # search
 brew "ripgrep"
