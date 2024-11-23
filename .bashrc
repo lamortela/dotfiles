@@ -27,7 +27,8 @@ ssh-add -A 2>/dev/null;
 # For nvm installed via homebrew
 # . $(brew --prefix nvm)/nvm.sh;
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+command -v fzf >/dev/null 2>&1 && eval "$(fzf --bash)"
+[ -n "$BASH" ] && complete -F _fzf_complete_git -o default -o bashdefault git
 
 # For nvm installed via creationix install.sh
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

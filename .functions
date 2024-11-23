@@ -67,3 +67,21 @@ weather() {
 ezip() {
   zip -er $1 $2 -x *.DS_Store
 }
+
+# fzf completion function for git
+_fzf_complete_git() {
+  _fzf_complete -- "$@" < <(
+    git --help -a | grep -E '^\s+' | awk '{print $1}'
+  )
+}
+
+# custom fzf completion for certain commands
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    tree)         find . -type d | fzf --preview 'tree -C {}' "$@" ;;
+    *)            fzf "$@" ;;
+  esac
+}
