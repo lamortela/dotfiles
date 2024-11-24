@@ -120,6 +120,9 @@ if executable('rg')
   let g:ctrlp_use_caching = 0
 endif
 
+" fzf configuration
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.7 } }
+
 " ALE configuration
 let g:ale_lint_on_save = 1
 let g:ale_linters = {
