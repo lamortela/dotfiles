@@ -1,3 +1,4 @@
+# globs to ignore in tools like rg and ag
 *.png
 *.jpg
 *.pdf
@@ -5,3 +6,5 @@
 .git/
 
 .ignore
+
+.tags
