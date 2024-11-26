@@ -10,11 +10,11 @@ brew "bash-completion@2"
 brew "coreutils"
 brew "tmux"
 brew "git"
+brew "git-extras"
 brew "bat"
 brew "shellcheck"
 brew "tree"
 brew "fd"
-brew "httpie"
 
 # search
 brew "ripgrep"
@@ -44,6 +44,7 @@ brew "go"
 brew "kubernetes-cli"
 brew "kubectx"
 brew "direnv"
+brew "httpie"
 
 # fonts
 cask "font-fira-code"

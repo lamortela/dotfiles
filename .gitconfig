@@ -31,6 +31,7 @@
 
 	# Shortcut the basics
 	aa = add --all
+  ac = "!f() { git add -A && git commit -m \"$1\"; }; f"
 	br = branch -v --sort=-committerdate
 	ca = commit --amend
 	ci = commit --verbose
